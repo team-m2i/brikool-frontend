@@ -1,0 +1,1 @@
+this folder contains the dictionaries for the messages that the bot sends to the user, each supported language contains a files (`HomePage.json`, `About.json` etc ...) with the messages in that language

@@ -1,0 +1,10 @@
+{
+  "lang": {
+    "title": "Langue",
+    "languages": {
+      "en": "Anglais",
+      "fr": "Français",
+      "ar": "Arabe"
+    }
+  }
+}
