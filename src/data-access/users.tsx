@@ -1,6 +1,5 @@
 import "server-only"
 import { cache } from 'react';
-import { cookies } from 'next/headers';
 
 // """"""""""""""" DEMO CODE """""""""""""""
 // Cached helper methods makes it easy to get the same value in many places

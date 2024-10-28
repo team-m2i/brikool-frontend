@@ -27,3 +27,5 @@ export const usersEndpoints: UserEndpoints = {
         put: () => `${base_path}/${id}`,
     }),
 };
+
+fetch(usersEndpoints.item('100').get())
