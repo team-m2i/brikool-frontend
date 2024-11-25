@@ -6,6 +6,7 @@ import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {ThemeProvider} from "next-themes";
 import {Toaster} from "@/components/ui/toaster";
+import {SessionProvider} from "next-auth/react";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -20,7 +21,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Brikool",
-  description: "Local freelance platform",
+  description: "Local freelancer platform",
 };
 
 export default async function RootLayout({children, params: {locale}}: { children: ReactNode; params: {locale: string}; }) {
@@ -41,12 +42,14 @@ export default async function RootLayout({children, params: {locale}}: { childre
         style={{direction: locale === "ar" ? "rtl" : "ltr"}}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
+    <SessionProvider>
     <ThemeProvider attribute={"class"}>
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>
-    <Toaster />
+      <Toaster />
+    </SessionProvider>
     </body>
     </html>
   );

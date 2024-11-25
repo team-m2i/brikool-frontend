@@ -1,0 +1,118 @@
+{
+  "NewFreelancerPage": {
+    "title": "Finish your account setup",
+    "step1": {
+      "title": "Almost there",
+      "p1": "Welcome to Brikool platform! You have chosen to be our associate freelancer. We are thrilled to have you on board. As a freelancer, you will have access to a wide range of opportunities and resources tailored to your skills and interests. Please finish your account setup to get started on your journey with us.",
+      "p2": "Click on next to proceed and complete your account setup. If you have any questions or need assistance, feel free to reach out to our support team. We are here to help you every step of the way."    },
+    "step2": {
+      "title": "Brand",
+      "description": "Please set up your public brand profile. This will be visible to other users on the platform.",
+      "field": {
+        "nickname": {
+          "label": "Nickname",
+          "placeholder": "Enter your nickname",
+          "error": {
+            "invalid": "Nickname is too short",
+            "invalid_max": "Nickname is too long"
+          }
+        },
+        "publicEmail": {
+          "label": "Public email (optional)",
+          "error": {
+            "invalid": "Invalid email address"
+          }
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Describe your profile services",
+          "error": {
+            "invalid": "Description is too short",
+            "invalid_max": "The description is too long"
+          }
+        },
+        "phone": {
+          "label": "Phone",
+          "error": {
+            "invalid": "Invalid phone number"
+          }
+        },
+        "zip": {
+          "label": "ZIP",
+          "error": {
+            "invalid": "Invalid postal code"
+          }
+        },
+        "region": {
+          "placeholder": "Select a region",
+          "code": "en",
+          "label": "Region",
+          "error": {
+            "invalid": "Invalid region name",
+            "invalid_max": "Region name is too long"
+          }
+        },
+        "city": {
+          "placeholder": "Select a city",
+          "code": "en",
+          "label": "City",
+          "error": {
+            "invalid": "Invalid city name",
+            "invalid_max": "City name is too long"
+          }
+        },
+        "address": {
+          "label": "Address",
+          "placeholder": "Enter your address",
+          "error": {
+            "invalid": "Invalid address",
+            "invalid_max": "Address is too long"
+          }
+        }
+      }
+    },
+    "step3": {
+      "title": "Categories",
+      "description": "Please select the categories that best describe your skills and interests. This will help us match you with the right opportunities. You can select up to 3 categories.",
+        "field": {
+            "categories": {
+            "label": "Search categories",
+            "placeholder": "Search something",
+            "code": "en",
+            "error": {
+                "invalid": "Please select at least one category",
+                "invalid_max": "You can select up to 3 categories"
+            }
+            }
+        }
+    },
+    "step4": {
+      "title": "Terms of Service & Privacy Policy",
+      "p1": "Congratulations! Your account has been set up, and you’re ready to begin your freelance journey with Brikool. Click \"I agree\" to proceed and explore new opportunities.",
+      "p2": "By clicking \"I agree\", you confirm that you have read and accepted our",
+      "and": "and",
+      "links": {
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+      },
+      "toast": {
+        "success": {
+          "title": "Congratulations",
+          "message": "Your account has been successfully set up"
+        },
+        "error": {
+          "title": "Error",
+          "message": "An error occurred. Please try again"}
+      }
+    },
+    "footer": {
+      "button": {
+        "next": "Next",
+        "loading": "Loading",
+        "skip": "Complete setup",
+        "end": "I agree",
+        "back": "Back"
+      }
+    }
+  }
+}

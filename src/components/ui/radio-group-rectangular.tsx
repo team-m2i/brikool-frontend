@@ -12,7 +12,7 @@ export type TRadioButtonOptions = {
 const RadioGroupRectangular = ({ parentClassName ,className, label, options, name, }:{
     parentClassName?: string,
     className?: string,
-    label: string,
+    label?: string,
     options:TRadioButtonOptions[]
     name: string
 }) => {

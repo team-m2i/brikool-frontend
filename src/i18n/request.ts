@@ -11,6 +11,11 @@ export default getRequestConfig(async ({locale}) => {
             ...(await import(`../../messages/${locale}/homepage.json`)).default,
             ...(await import(`../../messages/${locale}/lang.json`)).default,
             ...(await import(`../../messages/${locale}/common.json`)).default,
+            ...(await import(`../../messages/${locale}/loginPage.json`)).default,
+            ...(await import(`../../messages/${locale}/registerPage.json`)).default,
+            ...(await import(`../../messages/${locale}/newFreelancerPage.json`)).default,
+            ...(await import(`../../messages/${locale}/forgotPasswordPage.json`)).default,
+            ...(await import(`../../messages/${locale}/resetPasswordPage.json`)).default,
     },
     };
 });

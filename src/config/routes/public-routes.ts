@@ -1,0 +1,1 @@
+export const PUBLIC_ROUTES = ["/", "/terms-and-privacy", "/auth/flow"]

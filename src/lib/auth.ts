@@ -1,47 +1,75 @@
-import NextAuth from "next-auth"
-import Credentials from "next-auth/providers/credentials"
+import NextAuth from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import {BACKEND_SERVER_NAME} from "@/lib/constants";
+import {TSignInSchema} from "@/definitions/schema/auth-flow-schema";
+import {customSignIn} from "@/data-access/auth-flow";
+import {TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
+import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
+import {decode} from "jsonwebtoken";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
         Credentials({
-            id: "springboot",
+            id: BACKEND_SERVER_NAME,
             name: "Spring Boot",
-            // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-            // e.g. domain, username, password, 2FA token, etc.
             credentials: {
-                email: {},
-                password: {},
-                name: {},
-
+                email: { label: "Email", type: "text" },
+                password: { label: "Password", type: "password" }
             },
             authorize: async (credentials) => {
-                let user = null
-                console.log("Authjs called with credentials: ", credentials)
-                // logic to salt and hash password
-                const pwHash =credentials.password
-
-                // logic to verify if the user exists
-                user = await getUserFromDb(credentials.email as string, pwHash as string)
-
-                if (!user) {
-                    // No user found, so this is their first attempt to login
-                    // Optionally, this is also the place you could do a user registration
-                    throw new Error("Invalid credentials.")
+                if (!credentials) {
+                    console.error("No credentials provided");
+                    return null;
                 }
 
-                // return user object with their profile data
-                return user
+                const signInData: TSignInSchema = {
+                    email: credentials.email as string,
+                    password: credentials.password as string
+                };
+
+                try {
+                    const res = await customSignIn(signInData);
+                    if (res.ok) {
+                        const data: TSignInResponseModel | null = await res.json();
+                        if (data?.jwt) {
+
+                            return {...data.user, jwt: data.jwt};
+                        } else {
+                            console.error("Authorization failed:", data);
+                        }
+                    } else {
+                        console.error("Failed to sign in:", res.statusText);
+                    }
+                } catch (error) {
+                    console.error("Error during sign-in:", error);
+                }
+
+                return null;
             },
         }),
     ],
-})
-
-const getUserFromDb = async (email: string, pwHash: string) => {
-    // logic to get user from database
-    return {
-        id: "1",
-        name: "john doe",
-        email: "john@doe.com",
-        image: "/assets/profiles/1.jpg",
-    }
-}
+    session: { strategy: "jwt" },
+    callbacks: {
+        authorized({ request, auth }) {
+            const { pathname } = request.nextUrl;
+            if (pathname.includes("/profile")) return !!auth;
+            return true;
+        },
+        jwt({ token, user }) {
+            if(user){
+                const decodedToken = decode(user?.jwt.access_token);
+                console.log(decodedToken)
+                return {user: {...user}, exp: decodedToken?.exp}
+            }
+            return token
+        },
+        async session({ session, token }) {
+            if(token)
+                return {...session, ...token}
+            return session
+        },
+    },
+    pages: {
+        signIn: authFlowNavLinks.singIn.href,
+    },
+});

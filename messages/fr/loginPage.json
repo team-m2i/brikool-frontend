@@ -1,0 +1,44 @@
+{
+  "LoginPage": {
+    "title": "Salut mon ami! Bon retour",
+    "field": {
+      "email": {
+        "label": "Email",
+        "error": {
+          "invalid": "Email invalide"
+        }
+      },
+      "password": {
+        "label": "Mot de passe",
+        "error": {
+          "invalid": "Le mot de passe doit comporter au moins 8 caractères"
+        }
+      }
+    },
+    "links": {
+      "forgot": "Mot de passe oublié?",
+      "signupText": "Vous n'avez pas de compte?",
+      "signup": "Créer un compte",
+      "continue": "Continuer avec "
+    },
+    "or": "Ou",
+    "buttons": {
+      "submit": "Continuer",
+      "loading": "Chargement"
+    },
+    "toast": {
+        "error": {
+            "title": "Erreur",
+            "message": "Email ou mot de passe invalide"
+        },
+        "success": {
+            "title": "Succès",
+            "message": "Connexion réussie"
+        },
+        "serverError": {
+            "title": "Erreur du serveur",
+            "message": "Quelque chose s'est mal passé. Veuillez réessayer plus tard"
+        }
+    }
+  }
+}

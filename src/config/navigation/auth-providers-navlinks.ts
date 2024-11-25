@@ -1,6 +1,10 @@
 type TProviderNavLink =  {
     id: string,
-    title: string,
+    title: {
+        ar: string,
+        fr: string,
+        en: string
+    },
     icon: string
 }
 
@@ -8,17 +12,29 @@ type TProviderNavLink =  {
 const authProvidersNavLinks: TProviderNavLink[] = [
     {
         id: "google",
-        title: "Google",
+        title: {
+            ar: "جوجل",
+            fr: "Google",
+            en: "Google"
+        },
         icon: "/assets/images/icons/google.svg"
     },
     {
         id: "facebook",
-        title: "Facebook",
+        title: {
+            ar: "فيسبوك",
+            fr: "Facebook",
+            en: "Facebook"
+        },
         icon: "/assets/images/icons/facebook.svg"
     },
     {
         id: "github",
-        title: "Github",
+        title: {
+            ar: "جيت هاب",
+            fr: "Github",
+            en: "Github"
+        },
         icon: "/assets/images/icons/github.svg"
     }
 ]
