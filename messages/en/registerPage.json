@@ -1,0 +1,81 @@
+{
+  "RegisterPage": {
+    "title": "Register",
+    "description": "Get started today!",
+    "field": {
+      "name": {
+        "label": "Name",
+        "error": {
+          "invalid": "Name is too short"
+        }
+      },
+      "email": {
+        "label": "Email",
+        "error": {
+          "invalid": "Invalid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "error": {
+          "invalid": "Password must be at least 8 characters",
+          "weak": "Password is weak"
+        }
+      },
+        "confirmPassword": {
+          "label": "Confirm password",
+          "error": {
+            "invalid": "Password must be at least 8 characters",
+            "notMatch": "Passwords do not match"
+          }
+        },
+      "accountType": {
+        "label": "i am a",
+        "option": {
+          "client": "Regular user",
+          "freelancer": "Associate freelancer"
+        },
+        "error": {
+          "required": "Please select your account type"
+        }
+      }
+    },
+    "strength": {
+      "status": {
+        "weak": "Weak",
+        "moderate": "Moderate",
+        "strong": "Strong",
+        "veryStrong": "Very strong"
+      },
+      "text": "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, one number and one special character."
+    },
+    "links": {
+      "signinText": "Already have an account?",
+      "signin": "Sign in",
+      "continue": "Continue with "
+    },
+    "or": "Or",
+    "buttons": {
+      "submit": "Create your account",
+      "loading": "Loading"
+    },
+    "toast": {
+      "201": {
+        "title": "Account created",
+        "message": "Account created successfully, a verification email has been sent to your inbox please confirm your email"
+      },
+      "409": {
+        "title": "Registration failed",
+        "message": "This email is already in use"
+      },
+      "400": {
+        "title": "Registration failed",
+        "message": "The information you provided are invalid"
+      },
+      "500": {
+        "title": "Server Error",
+        "message": "Something went wrong. Please try again later"
+      }
+    }
+  }
+}

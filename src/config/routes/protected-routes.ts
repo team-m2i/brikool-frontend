@@ -1,0 +1,1 @@
+export const PROTECTED_ROUTES = ["/profile", "/dashboard", "/settings", "/auth/new"]

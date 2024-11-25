@@ -25,7 +25,7 @@ const InputPassword = forwardRef<HTMLInputElement, InputProps>(
                 <Button
                     variant={"ghost"}
                     onClick={toggleVisibility}
-                    className={"hover:bg-transparent flex items-center justify-center absolute h-2/3 w-fit right-3 top-1/2 -translate-y-1/2 cursor-pointer"}
+                    className={"hover:bg-transparent flex items-center justify-center absolute h-2/3 w-fit end-3 top-1/2 -translate-y-1/2 cursor-pointer"}
                 >
                     <p className={"sr-only"}>
                         toggle password visibility

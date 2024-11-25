@@ -1,0 +1,120 @@
+{
+  "NewFreelancerPage": {
+    "title": "Terminez la configuration de votre compte",
+    "step1": {
+      "title": "Presque terminé",
+      "p1": "Bienvenue sur la plateforme Brikool ! Vous avez choisi d'être notre associé freelance. Nous sommes ravis de vous accueillir. En tant que freelance, vous aurez accès à une large gamme d'opportunités et de ressources adaptées à vos compétences et intérêts. Veuillez terminer la configuration de votre compte pour commencer votre aventure avec nous.",
+      "p2": "Cliquez sur suivant pour continuer et terminer la configuration de votre compte. Si vous avez des questions ou avez besoin d'aide, n'hésitez pas à contacter notre équipe de support. Nous sommes là pour vous aider à chaque étape."
+    },
+    "step2": {
+      "title": "Marque",
+      "description": "Veuillez configurer votre profil de marque public. Cela sera visible par les autres utilisateurs sur la plateforme.",
+      "field": {
+        "nickname": {
+          "label": "Surnom",
+          "placeholder": "Entrez votre surnom",
+          "error": {
+            "invalid": "Le surnom est trop court",
+            "invalid_max": "Le surnom est trop long"
+          }
+        },
+        "publicEmail": {
+          "label": "Email public (optionnel)",
+          "error": {
+            "invalid": "Adresse email invalide"
+          }
+        },
+        "description": {
+          "label": "Description",
+          "placeholder": "Décrivez vos services de profil",
+          "error": {
+            "invalid": "La description est trop courte",
+            "invalid_max": "La description est trop longue"
+          }
+        },
+        "phone": {
+          "label": "Téléphone",
+          "error": {
+            "invalid": "Numéro de téléphone invalide"
+          }
+        },
+        "zip": {
+          "label": "Code postal",
+          "error": {
+            "invalid": "Code postal invalide"
+          }
+        },
+        "region": {
+          "placeholder": "Sélectionnez une région",
+          "code": "fr",
+          "label": "Région",
+          "error": {
+            "invalid": "Nom de région invalide",
+            "invalid_max": "Le nom de la région est trop long"
+          }
+        },
+        "city": {
+          "placeholder": "Sélectionnez une ville",
+          "code": "fr",
+          "label": "Ville",
+          "error": {
+            "invalid": "Nom de ville invalide",
+            "invalid_max": "Le nom de la ville est trop long"
+          }
+        },
+        "address": {
+          "label": "Adresse",
+          "placeholder": "Entrez votre adresse",
+          "error": {
+            "invalid": "Adresse invalide",
+            "invalid_max": "L'adresse est trop longue"
+          }
+        }
+      }
+    },
+    "step3": {
+      "title": "Catégories",
+      "description": "Veuillez sélectionner les catégories qui décrivent le mieux vos compétences et intérêts. Cela nous aidera à vous mettre en relation avec les bonnes opportunités. Vous pouvez sélectionner jusqu'à 3 catégories.",
+      "field": {
+        "categories": {
+          "label": "Rechercher des catégories",
+          "placeholder": "Recherchez quelque chose",
+          "code": "fr",
+          "error": {
+            "invalid": "Veuillez sélectionner au moins une catégorie",
+            "invalid_max": "Vous pouvez sélectionner jusqu'à 3 catégories"
+          }
+        }
+      }
+    },
+    "step4": {
+      "title": "Conditions d'utilisation et politique de confidentialité",
+      "p1": "Félicitations ! Votre compte a été configuré et vous êtes prêt à commencer votre aventure freelance avec Brikool. Cliquez sur \"J'accepte\" pour continuer et explorer de nouvelles opportunités.",
+      "p2": "En cliquant sur \"J'accepte\", vous confirmez que vous avez lu et accepté nos",
+      "and": "et",
+      "links": {
+        "terms": "Conditions d'utilisation",
+        "privacy": "Politique de confidentialité"
+      },
+      "toast": {
+        "success": {
+          "title": "Félicitations",
+          "message": "Votre compte a été configuré avec succès"
+        },
+        "error": {
+          "title": "Erreur",
+          "message": "Une erreur s'est produite. Veuillez réessayer"
+        }
+      }
+    },
+    "footer": {
+      "button": {
+        "next": "Suivant",
+        "loading": "Chargement",
+        "skip": "Terminer la configuration",
+        "end": "J'accepte",
+        "back": "Retour"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "LoginPage": {
+    "title": "Hey friend! Welcome back",
+    "field": {
+      "email": {
+        "label": "Email",
+        "error": {
+          "invalid": "Invalid email"
+        }
+      },
+      "password": {
+        "label": "Password",
+        "error": {
+          "invalid": "Password must be at least 8 characters"
+        }
+      }
+    },
+    "links": {
+      "forgot": "Forgot password?",
+      "signupText": "Don't have an account?",
+      "signup": "Create one",
+      "continue": "Continue with "
+    },
+    "or": "Or",
+    "buttons": {
+      "submit": "Continue",
+      "loading": "Loading"
+    },
+    "toast": {
+        "error": {
+            "title": "Error",
+            "message": "Invalid email or password"
+        },
+        "success": {
+            "title": "Success",
+            "message": "Logged in successfully"
+        },
+        "serverError": {
+            "title": "Server Error",
+            "message": "Something went wrong. Please try again later"
+        }
+    }
+  }
+}

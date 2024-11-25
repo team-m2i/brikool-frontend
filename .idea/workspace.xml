@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-1-of-4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-2-of-4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-3-of-4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-4-of-4.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.template" beforeDir="false" afterPath="$PROJECT_DIR$/.env.template" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/brikool.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/common/auth-flow-action.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/common/auth-flow-actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/freelance/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/freelancer/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/flow/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new-user/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new-user/step-1-of-4.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new-user/step-2-of-4.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new-user/step-3-of-4.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new-user/step-4-of-4.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/register/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/flow/register/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/profile/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input-password.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input-password.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/radio-group-rectangular.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/radio-group-rectangular.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/endpoints/users-endpoints.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/endpoints/users-endpoints.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/navigation/auth-providers-navlinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/navigation/auth-providers-navlinks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useDebounce.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-debounce.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/raw/cities.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/raw/cities.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="tsconfig.json" />
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;codeonym&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:team-m2i/brikool-frontend.git&quot;,
+    &quot;accountId&quot;: &quot;3bc24303-b8c3-4c22-9173-aae73162c487&quot;
+  }
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2oGlHmZ1Q6DMYx9ESf7Bs5YFtEo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/auth-flow-intergration",
+    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/messages/ar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/messages/ar" />
+      <recent name="$PROJECT_DIR$/messages/fr" />
+      <recent name="$PROJECT_DIR$/messages/en" />
+      <recent name="$PROJECT_DIR$/src/raw" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/config/routes/RBAC" />
+      <recent name="$PROJECT_DIR$/src/app/[locale]/auth/new" />
+      <recent name="$PROJECT_DIR$/src/actions/freelancer" />
+      <recent name="$PROJECT_DIR$/src/app/[locale]/auth/config" />
+      <recent name="$PROJECT_DIR$/src/app/[locale]/auth/flow" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="" />
+      <created>1730503707986</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730503707986</updated>
+      <workItem from="1730503708993" duration="5854000" />
+      <workItem from="1730556040372" duration="437000" />
+      <workItem from="1730556478835" duration="82820000" />
+      <workItem from="1730829559776" duration="6069000" />
+      <workItem from="1730906853277" duration="10176000" />
+      <workItem from="1730984773169" duration="47530000" />
+      <workItem from="1731076841242" duration="27006000" />
+      <workItem from="1731178671275" duration="4504000" />
+      <workItem from="1732368474422" duration="65541000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.template" />
+  </component>
+</project>

@@ -1,5 +1,8 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import {NextRequest, NextResponse} from "next/server";
+import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
+import {APP_BASE_URL} from "@/lib/constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -24,4 +27,14 @@ export const calculatePasswordStrength = (password: string): number => {
   if (/[0-9]/.test(password)) strength += 1;
   if (/[^A-Za-z0-9]/.test(password)) strength += 1;
   return (strength / 5) * 100;
+}
+
+export const redirectRequest = (req: NextRequest, redirectUrl: string) => {
+  const locales = ["ar", "fr", "en"]
+  const tmp = req.url.split("/")
+  const locale = locales.filter((locale) => tmp.includes(locale))[0] || "en"
+  const redirectTo = "/" + locale + redirectUrl
+  console.log(redirectTo)
+  return NextResponse.redirect(new URL(redirectTo, APP_BASE_URL).toString())
+
 }
