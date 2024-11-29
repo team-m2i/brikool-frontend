@@ -1,11 +1,17 @@
-import React from 'react';
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import DefaultLayout from "@/components/Layouts/DefaultLaout";
+import ProfileBox from "@/components/ProfileBox";
 
-function Page() {
+
+const Profile = () => {
     return (
-        <div>
-            freelancer dashboard
-        </div>
+        <DefaultLayout>
+            <div className="mx-auto w-full max-w-[970px]">
+                <Breadcrumb pageName="Profile" />
+                <ProfileBox />
+            </div>
+        </DefaultLayout>
     );
-}
+};
 
-export default Page;
+export default Profile;
