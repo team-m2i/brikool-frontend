@@ -1,20 +1,27 @@
 'use client'
 
 import { Button } from "@/components/ui/button"
-import React, { Fragment, useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Logo from "../ui/logo"
-import Modal from "../ui/Modal"
+import Login from "../Login/Login"
+import Link from 'next/link';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-
-
+import { Moon, MoonIcon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 
 const navigation = [
@@ -69,11 +76,11 @@ export default function Accueil() {
     const [showModal, setShowModal] = useState(false)
     const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true }))
-    // const [emblaRef] = useEmblaCarousel({ loop: true });  
-
+    const { setTheme } = useTheme()
   return (
-    <Fragment>
-    
+    <>
+          
+         
           <header id="header" className="pt-32">
             <nav 
             aria-label="Global" 
@@ -108,11 +115,30 @@ export default function Accueil() {
                     <a href="#" className="text-sm/6 text-white ">Log In </a>
                 </Button>
                 <Button variant="outline"> 
-                    <a href="#" className="text-sm/6 text-gray ">Sign Up </a>
+                  <Link href="/signUp" className="text-sm/6 text-gray">Sign Up</Link>
                 </Button>
               </div>
             </nav>
-
+            <div className="theme fixed top-[600px] right-[70px]">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="none" size="icon">
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <span className="sr-only">Toggle theme</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  <DropdownMenuItem onClick={() => setTheme("light")}>
+                    Light
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setTheme("dark")}>
+                    Dark
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+            
             <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
               <div className="fixed inset-0 z-50" />
               <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
@@ -178,24 +204,33 @@ export default function Accueil() {
                   <p>skills for seamless collaboration and success.</p>
                 </div>
                 <div className="pt-2">
-                  <Button variant="none" className="bg-myColor2 border-none" onClick={() => setShowModal(true)}>
-                    <a href="#" className="text-sm/6 text-white">Get Started </a>
+                  <Button variant="none" className="bg-myColor2 border-none">
+                    <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
                   </Button>
                 </div>
                 
               </div>
               <div className="carousel flex justify-center items-center h-full" >
-
                 <Carousel 
-                  // orientation="vertical"
                   className="max-w-lg overflow-hidden"
-                  // ref={emblaRef}
                   plugins={[plugin.current]}
                 >
                 <CarouselContent className="-mt-1 h-[500px]">
                   <CarouselItem ><img src="/assets/images/heroSlide1.svg" alt="heroSlide1"/></CarouselItem>
-                  <CarouselItem ><img src="/assets/images/heroSlide2.svg" alt="heroSlide2"/></CarouselItem>
-                  <CarouselItem ><img src="/assets/images/heroSlide3.svg" alt="heroSlide3"/></CarouselItem>
+                  <CarouselItem >
+                    <div className="relative w-[520px] h-[520px] flex justify-center items-center text-[30px]">
+                      <h1>Start By Creating Your Profile</h1>
+                      <img className="absolute top-[150px] right-1/4" src="/assets/images/hammerSvg.svg" alt="hammerSvg" />
+                      <img className="absolute bottom-[150px] left-1/4" src="/assets/images/fingerPrintSvg.svg" alt="fingerPrintSvg" />
+                    </div>
+                    </CarouselItem>
+                  <CarouselItem >
+                    <div className="relative w-[520px] h-[520px] flex justify-center items-center text-[25px]">
+                      <h1>And Be The Freelancer Of the Month !</h1>
+                      <img className="absolute top-[20px] right-[120px]" src="/assets/images/heroTopImg.svg" alt="heroTopImg" />
+                      <img className="absolute top-[270px] left-[10px]" src="/assets/images/heroLeftImg.svg" alt="heroLeftImg" />
+                      <img className="absolute top-[270px] right-[50px]" src="/assets/images/heroRightImg.svg" alt="heroRightImg" />
+                    </div></CarouselItem>
                 </CarouselContent>
                 </Carousel> 
               </div>
@@ -204,9 +239,7 @@ export default function Accueil() {
 
           </header>
           <section id="services" className="py-12 px-8 lg:px-16 h-screen flex justify-center items-center">
-        {/* Flex Container */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10">
-          {/* Left Section: Title, Paragraph, and Button */}
           <div className="lg:w-1/3 text-left">
             <h1 className="text-5xl font-bold mb-4">Amazing Services</h1>
             <p className='text-lg'>
@@ -215,8 +248,8 @@ export default function Accueil() {
             connect with top freelancers and get the job done seamlessly
             </p>
             <div className="pt-2">
-                <Button variant="none" className="bg-myColor2 border-none" onClick={() => setShowModal(true)}>
-                    <a href="" className="text-sm/6 text-white">Get Started </a>
+                <Button variant="none" className="bg-myColor2 border-none">
+                  <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
                 </Button>
             </div>
           </div>
@@ -243,23 +276,20 @@ export default function Accueil() {
             </div>
             <div className=''>
                 <div className='p-6'>
-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">For Clients</h1>
+                    <h1 className="text-4xl font-bold text-900 mb-4">For Clients</h1>
                     <p>Clients can discover freelancers at every price point, with options to fit</p> 
                     <p>any budget and project needs.</p>
                 </div>
                 <div className='p-6'>
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">For Freelancers</h1>
+                <h1 className="text-4xl font-bold text-900 mb-4">For Freelancers</h1>
                     <p>Freelancers have the freedom to set their own prices and find projects</p> 
                     <p>that match their skill level and goals starting from 50DH.</p>
                 </div>
             </div>
-        </section>
-
-      
-          <Modal isVisible ={showModal} onClose={() => setShowModal(false)} />
-        
+          </section>
+          <Login isVisible ={showModal} onClose={() => setShowModal(false)} />
             
-    </Fragment>  
+    </>  
     
   )
 }

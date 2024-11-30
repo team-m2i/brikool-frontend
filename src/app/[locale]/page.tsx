@@ -10,13 +10,11 @@ const HomePage = ({ params: {locale}}: { params: {locale: string}; }) => {
   const t = useTranslations('HomePage');
   return (
       <div>
-        {/* <h1>{t('title')}</h1> */}
-          {/* <LanguageSwitcher locale={locale} />
+        {/* <h1>{t('title')}</h1>
+          <LanguageSwitcher locale={locale} />
           <ThemeSwitcher size={"md"}/> */}
           {/* <Button><Link href={"/about"}>{t('about')}</Link></Button> */}
           <Accueil />
-          {/* <AmazingServicesSection />
-          <PricingSection /> */}
       </div>
 
   );

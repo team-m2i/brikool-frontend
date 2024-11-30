@@ -4,7 +4,8 @@ import "../globals.css";
 import {ReactNode} from "react";
 import {getMessages} from "next-intl/server";
 import {NextIntlClientProvider} from "next-intl";
-import {ThemeProvider} from "next-themes";
+// import {ThemeProvider} from "next-themes";
+import { ThemeProvider } from "@/components/ui/theme-provider"
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -26,7 +27,7 @@ export default async function RootLayout({children, params: {locale}}: { childre
 
   const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
     <head>
       <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-48x48.png" sizes="48x48"/>
       <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg"/>
@@ -40,7 +41,10 @@ export default async function RootLayout({children, params: {locale}}: { childre
         style={{direction: locale === "ar" ? "rtl" : "ltr"}}
         className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
     >
-    <ThemeProvider attribute={"class"}>
+    <ThemeProvider attribute={"class"}
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange>
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>
