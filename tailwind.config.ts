@@ -16,6 +16,14 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
+			myColor:'#13BA83',
+			myColor2:'#009FFD',
+			myColor3:'#F18F01',
+			myColor4:'#E0E0E0',
+			myColor5:'#D9D9D9',
+
+			periwinkle :'#AEADF0',
+			  
   			popover: {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
@@ -56,7 +64,7 @@ const config: Config = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		}
-  	}
+	}
   },
   plugins: [require("tailwindcss-animate")],
 };

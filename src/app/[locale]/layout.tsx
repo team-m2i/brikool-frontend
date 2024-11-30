@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import {ReactNode} from "react";
-import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
+import {NextIntlClientProvider} from "next-intl";
 import {ThemeProvider} from "next-themes";
 
 const geistSans = localFont({
@@ -38,13 +38,14 @@ export default async function RootLayout({children, params: {locale}}: { childre
     </head>
     <body
         style={{direction: locale === "ar" ? "rtl" : "ltr"}}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
     >
     <ThemeProvider attribute={"class"}>
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>
     </ThemeProvider>
+
     </body>
     </html>
   );
