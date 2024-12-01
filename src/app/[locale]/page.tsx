@@ -3,7 +3,7 @@ import {LanguageSwitcher} from "@/components/ui/LanguageSwitcher";
 import ThemeSwitcher from "@/components/ui/ThemeSwitcher";
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Accueil from '@/components/Accueil/Accueil';
+import Accueil from '@/app/[locale]/accueil/page';
 
 
 const HomePage = ({ params: {locale}}: { params: {locale: string}; }) => {
@@ -14,7 +14,9 @@ const HomePage = ({ params: {locale}}: { params: {locale: string}; }) => {
           <LanguageSwitcher locale={locale} />
           <ThemeSwitcher size={"md"}/> */}
           {/* <Button><Link href={"/about"}>{t('about')}</Link></Button> */}
-          <Accueil />
+          <Accueil params={{
+        locale: `${locale}`
+      }} />
       </div>
 
   );

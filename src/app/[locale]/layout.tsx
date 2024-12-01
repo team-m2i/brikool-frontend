@@ -4,8 +4,7 @@ import "../globals.css";
 import {ReactNode} from "react";
 import {getMessages} from "next-intl/server";
 import {NextIntlClientProvider} from "next-intl";
-// import {ThemeProvider} from "next-themes";
-import { ThemeProvider } from "@/components/ui/theme-provider"
+import { ThemeProvider } from "next-themes";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",

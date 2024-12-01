@@ -5,8 +5,8 @@ import React from 'react'
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Logo from "../ui/logo"
-import Login from "../Login/Login"
+import Logo from "../../../components/ui/logo"
+import Login from "../../../components/Login/Login"
 import Link from 'next/link';
 import {
   Carousel,
@@ -71,7 +71,7 @@ const services = [
     ];
 
   
-export default function Accueil() {
+export default function Accueil({params : {locale}}: {params : {locale : string}}) {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const plugin = React.useRef(
@@ -79,8 +79,6 @@ export default function Accueil() {
     const { setTheme } = useTheme()
   return (
     <>
-          
-         
           <header id="header" className="pt-32">
             <nav 
             aria-label="Global" 
@@ -112,10 +110,12 @@ export default function Accueil() {
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 ">
                 <Button variant="default" onClick={() => setShowModal(true)}>
-                    <a href="#" className="text-sm/6 text-white ">Log In </a>
+                  <Link href="#" className="text-sm/6 text-white ">Log In</Link>
                 </Button>
                 <Button variant="outline"> 
-                  <Link href="/signUp" className="text-sm/6 text-gray">Sign Up</Link>
+                  <Link 
+                  href={`/${locale}/signup`}
+                  className="text-sm/6 text-gray">Sign Up</Link>
                 </Button>
               </div>
             </nav>
@@ -236,39 +236,37 @@ export default function Accueil() {
               </div>
 
             </div>
-
           </header>
           <section id="services" className="py-12 px-8 lg:px-16 h-screen flex justify-center items-center">
-        <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10">
-          <div className="lg:w-1/3 text-left">
-            <h1 className="text-5xl font-bold mb-4">Amazing Services</h1>
-            <p className='text-lg'>
-            Find skilled professionals and tailored services easily with our app. 
-            Whether for personal projects or business needs,
-            connect with top freelancers and get the job done seamlessly
-            </p>
-            <div className="pt-2">
-                <Button variant="none" className="bg-myColor2 border-none">
-                  <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
-                </Button>
-            </div>
-          </div>
-
-          {/* Right Section: Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-10/12">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className={`p-10 rounded-lg shadow-md
-                  transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200
-                  ${service.bgColor} ${service.textColor} ${service.rotate}`}
-              >
-                <h2 className="font-bold text-lg">{service.title}</h2>
-                <p className="mt-2 text-sm">{service.description}</p>
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10">
+              <div className="lg:w-1/3 text-left">
+                <h1 className="text-5xl font-bold mb-4">Amazing Services</h1>
+                <p className='text-lg'>
+                Find skilled professionals and tailored services easily with our app. 
+                Whether for personal projects or business needs,
+                connect with top freelancers and get the job done seamlessly
+                </p>
+                <div className="pt-2">
+                    <Button variant="none" className="bg-myColor2 border-none">
+                      <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
+                    </Button>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
+              {/* Right Section: Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-10/12">
+                {services.map((service, index) => (
+                  <div
+                    key={index}
+                    className={`p-10 rounded-lg shadow-md
+                      transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200
+                      ${service.bgColor} ${service.textColor} ${service.rotate}`}
+                  >
+                    <h2 className="font-bold text-lg">{service.title}</h2>
+                    <p className="mt-2 text-sm">{service.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </section>
           <section id="pricing" className='lg:px-8 flex z-50 justify-evenly items-center h-full'>
             <div className=''>
