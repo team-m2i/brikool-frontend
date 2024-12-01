@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import {ReactNode} from "react";
-import {NextIntlClientProvider} from "next-intl";
 import {getMessages} from "next-intl/server";
 import {ThemeProvider} from "next-themes";
 import {Toaster} from "@/components/ui/toaster";
 import {SessionProvider} from "next-auth/react";
+import {NextIntlClientProvider} from "next-intl";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -28,7 +28,7 @@ export default async function RootLayout({children, params: {locale}}: { childre
 
   const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
     <head>
       <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-48x48.png" sizes="48x48"/>
       <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg"/>
@@ -40,7 +40,7 @@ export default async function RootLayout({children, params: {locale}}: { childre
     </head>
     <body
         style={{direction: locale === "ar" ? "rtl" : "ltr"}}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
     >
     <SessionProvider>
     <ThemeProvider attribute={"class"}>
