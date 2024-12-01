@@ -124,7 +124,7 @@ export default function Accueil({params : {locale}}: {params : {locale : string}
                 </Button>
               </div>
             </nav>
-            <div className="theme fixed top-[700px] right-[160px]">
+            <div className="theme fixed top-[600px] right-[70px]">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="none" size="icon">
