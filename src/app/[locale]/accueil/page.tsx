@@ -109,13 +109,13 @@ export default function Accueil({params : {locale}}: {params : {locale : string}
                 ))}
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 ">
-                <Button variant="default" onClick={() => setShowModal(true)}>
+                <Button onClick={() => setShowModal(true)}>
                   <Link href="#" className="text-sm/6 text-white ">Log In</Link>
                 </Button>
-                <Button variant="outline"> 
+                <Button className="text-sm/6 text-black bg-white hover:bg-gray"> 
                   <Link 
                   href={`/${locale}/signup`}
-                  className="text-sm/6 text-gray">Sign Up</Link>
+                  className="text-sm/6 text-black">Sign Up</Link>
                 </Button>
               </div>
             </nav>
@@ -205,7 +205,7 @@ export default function Accueil({params : {locale}}: {params : {locale : string}
                 </div>
                 <div className="pt-2">
                   <Button variant="none" className="bg-myColor2 border-none">
-                    <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
+                    <Link href={`/${locale}/signup`} className="text-sm/6 text-white">Get Started</Link>
                   </Button>
                 </div>
                 
@@ -248,7 +248,7 @@ export default function Accueil({params : {locale}}: {params : {locale : string}
                 </p>
                 <div className="pt-2">
                     <Button variant="none" className="bg-myColor2 border-none">
-                      <Link href="/signUp" className="text-sm/6 text-white">Get Started</Link>
+                      <Link href={`/${locale}/signup`} className="text-sm/6 text-white">Get Started</Link>
                     </Button>
                 </div>
               </div>

@@ -43,7 +43,7 @@ export default async function RootLayout({children, params: {locale}}: { childre
     <ThemeProvider attribute={"class"}
     defaultTheme="system"
     enableSystem
-    disableTransitionOnChange>
+    >
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>
