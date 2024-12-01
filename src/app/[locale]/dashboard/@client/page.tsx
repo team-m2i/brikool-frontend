@@ -1,10 +1,12 @@
+import Services from '@/components/ClientServices/Services';
+import ListeServices from '@/components/ClientServices/ListeServices';
 import React from 'react';
 
 function Client() {
     return (
-        <div>
-            cleint dashboard
-        </div>
+        <Services>
+            <ListeServices/>
+        </Services>
     );
 }
 
