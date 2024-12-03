@@ -30,6 +30,7 @@ import {Locale} from "@/lib/types";
 import type {TRadioButtonOptions} from "@/components/ui/radio-group-rectangular";
 import {RadioGroup, RadioGroupItem} from "@/components/ui/radio-group";
 import {Form, FormControl, FormField, FormItem, FormLabel} from "@/components/ui/form";
+import {InputPassword} from "@/components/ui/input-password";
 
 const PRIMARY_TEXT = "text-slate-800 dark:text-white";
 const SECONDARY_TEXT = "text-slate-500 dark:text-slate-100";
@@ -146,7 +147,7 @@ const RegisterPage = ({params: {locale}}: {params: {locale: string}}) => {
                                                    {t("field.password.label")}
                                                </FormLabel>
                                                <FormControl>
-                                                   <Input {...field} className={cn("h-12", SECONDARY_TEXT)}
+                                                   <InputPassword {...field} className={cn("h-12", SECONDARY_TEXT)}
                                                           placeholder={"*".repeat(20)}
                                                           onChange={(e) => {
                                                               setPassword(e.target.value)
@@ -180,7 +181,7 @@ const RegisterPage = ({params: {locale}}: {params: {locale: string}}) => {
                                                {t("field.confirmPassword.label")}
                                            </FormLabel>
                                            <FormControl>
-                                               <Input {...field} className={cn("h-12", SECONDARY_TEXT)}
+                                               <InputPassword {...field} className={cn("h-12", SECONDARY_TEXT)}
                                                       placeholder={"*".repeat(20)}/>
                                            </FormControl>
                                            <ErrorMessage field={"confirmPassword"}/>
