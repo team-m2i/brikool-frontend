@@ -103,6 +103,7 @@ const config: Config = {
 			myColor3:'#F18F01',
 			myColor4:'#E0E0E0',
 			myColor5:'#D9D9D9',
+			mycolor6:'#10b981',
 
 			periwinkle :'#AEADF0',
 			  
