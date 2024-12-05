@@ -1,6 +1,71 @@
 {
   "HomePage": {
-    "title": "Bienvenue tout le monde!",
-    "about": "Aller à la page à propos"
-  }
+      "entrytitle": {
+          "title1": "Bienvenue Chez ",
+          "title2": "Votre Place De Marché",
+          "title3": "Pour Les Freelances",
+          "title4": "Qualifiés!",
+          "subtitle1": "Trouvez les meilleurs professionnels pour n'importe quel projet ou présentez votre",
+          "subtitle2": "compétences pour une collaboration et une réussite fluides.",          
+          "slide2": "Commencez Par Créer Votre Profil",
+          "slide3": "Et Soyez Le Freelance Du Mois !"
+      },
+      "navigation": {
+          "nav1" :"À propos",
+          "nav2" :"Services",
+          "nav3" :"Tarifs",
+          "nav4" :"Contactez-nous"
+      },
+      "buttons": {
+          "login" : "Se Connecter",
+          "signup": "S'inscrire",
+          "getstarted": "Commencer"
+      },
+      "aboutus": {
+          "subtitle" :"Plateforme sûre, complète et rapide",
+          "paragraphe" : "Bienvenue sur notre plateforme, un espace dynamique où la créativité rencontre l'opportunité. Notre mission est de donner aux freelances les moyens de mettre en valeur leurs compétences et leurs services dans un environnement professionnel. En même temps, nous nous efforçons de mettre en relation les clients avec des personnes talentueuses qui peuvent donner vie à leurs projets. Que vous soyez un freelance cherchant à développer sa carrière ou un client à la recherche du collaborateur idéal, notre plateforme est conçue pour simplifier les connexions, assurer la transparence et favoriser la collaboration. Ensemble, redéfinissons la façon dont le travail est réalisé !"
+      },
+      "services": {
+          "title" : "Des services incroyables",
+          "subtitle" :"Trouvez facilement des professionnels qualifiés et des services sur mesure grâce à notre application. Que ce soit pour des projets personnels ou des besoins professionnels, connectez-vous aux meilleurs freelances et réalisez votre travail en toute simplicité",
+          "title1" : "Agent de maintenance",
+          "title2" : "Peintre en bâtiment",
+          "title3" : "Charpentier",
+          "title4" : "Jardinier/Paysagiste",
+          "title5" : "Mécanicien",
+          "description1": "Garantir le bon fonctionnement et la sécurité au quotidien.",
+          "description2": "Applique de la peinture sur les murs et les surfaces, à l'intérieur comme à l'extérieur.",
+          "description3": "Fabrique et installe des structures en bois pour bâtiments, toitures, etc.",
+          "description4": "Entretient les espaces verts, crée et aménage des jardins et des parcs.",
+          "description5": "Technicien qui répare et entretient les véhicules et les machines."
+      },
+      "pricing": {
+          "title1" : "Pour Les Clients",
+          "title2" : "Pour Les Freelances",
+          "subtitle1" : "Les clients peuvent découvrir des freelances à tous les prix, avec des options adaptées",
+          "subtitle2" : "à tous les budgets et besoins de projets.",
+          "subtitle3" : "Les freelances ont la liberté de fixer leurs propres prix et de trouver des projets",
+          "subtitle4" : "qui correspondent à leur niveau de compétence et à leurs objectifs à partir de 50DH."
+      },
+      "footer":{
+          "placeholder" : "Entrez Votre Email",
+          "subscribe" : "Abonnez",
+          "subscribenow" : "Abonnez-vous maintenant",
+          "Information": {
+            "information" : "Information",
+            "testimonials" : "Témoignages",
+            "events" : "Événements"
+          },
+          "HelpfulLinks": {
+            "title" : "liens utiles",
+            "services" : "Services",
+            "supports" : "Supports",
+            "terms&privacy" : "Conditions générales"
+          },
+          "company" : "2024 © company.Ltd | Tous droits réservés"
+          
+      }
+
+      
+}
 }
