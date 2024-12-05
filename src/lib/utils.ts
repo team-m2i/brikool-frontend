@@ -1,8 +1,9 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 import {NextRequest, NextResponse} from "next/server";
-import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
-import {APP_BASE_URL} from "@/lib/constants";
+import {decode} from "jsonwebtoken";import {APP_BASE_URL} from "@/lib/constants";
+import {getToken} from "@auth/core/jwt";
+import {TSignInResponseModel, TSignInUserModel} from "@/definitions/models/auth-flow-model-schema";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -37,4 +38,27 @@ export const redirectRequest = (req: NextRequest, redirectUrl: string) => {
   console.log(redirectTo)
   return NextResponse.redirect(new URL(redirectTo, APP_BASE_URL).toString())
 
+}
+
+export const checkRouteAuthorization = (routes: string[], url: string): boolean => {
+    return routes.filter(route => url.includes(route)).length > 0
+}
+
+export const getLoggedInUser = async (req: NextRequest) => {
+  const session = await getToken({ req, secret: process.env.AUTH_SECRET })
+  if (session?.user) {
+    return session.user as TSignInUserModel
+  }
+  return null
+}
+
+export const getDecodedToken = async (req: NextRequest) => {
+  const session =  await getToken({ req, secret: process.env.AUTH_SECRET })
+  if(session?.user) {
+    const user = session.user as TSignInResponseModel
+    const token =user.jwt.access_token
+    const decoded = decode(token)
+    return decoded
+  }
+  return null
 }

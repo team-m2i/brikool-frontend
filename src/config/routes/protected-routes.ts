@@ -1,1 +1,1 @@
-export const PROTECTED_ROUTES = ["/profile", "/dashboard", "/settings", "/auth/new"]
+export const PROTECTED_ROUTES = ["/user", "/dashboard", "/auth/config/reset-password", "/auth/new", "/portfolio", "/announces"]
