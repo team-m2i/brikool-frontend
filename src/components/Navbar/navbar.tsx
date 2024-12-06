@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 import React, { useState } from 'react'
 import { Logo } from '../ui/logo'
 import { staticNavLinks } from '@/config/navigation/static-navlinks'
@@ -9,10 +8,11 @@ import { useTranslations } from 'next-intl'
 import AboutUs from '../AboutUs/AboutUs'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import {Link} from "@/i18n/routing";
 
 
 
-export default function page({params : {locale}}: {params : {locale : string}}) {
+export default function Navbar() {
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 const [showModal, setShowModal] = useState(false)
 const t = useTranslations('HomePage');
@@ -44,7 +44,7 @@ const t = useTranslations('HomePage');
                 <Link href="#" className="text-sm/6 font-semibold  
                   transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 ..."
                   onClick={() => setShowModal(true)}>{t("navigation.nav1")}</Link>
-                  <Link 
+                  <Link
                   href={staticNavLinks.services.href} 
                   className="text-sm/6 font-semibold  
                   transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200 ..."
@@ -68,7 +68,7 @@ const t = useTranslations('HomePage');
               </div>
               <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 ">
                 <Button variant="none">
-                  <Link href={`/${locale}/${authFlowNavLinks.singIn.href}`} 
+                  <Link href={authFlowNavLinks.singIn.href}
                   >
                      {t("buttons.login")} 
 
@@ -76,7 +76,7 @@ const t = useTranslations('HomePage');
                 </Button>
                 <Button variant="default" className="text-sm/6 border-none"> 
                   <Link 
-                  href={`/${locale}/${authFlowNavLinks.signUp.href}`}
+                  href={authFlowNavLinks.signUp.href}
                   className="text-sm/6 text-white">{t("buttons.signup")}</Link>
                 </Button>
               </div>

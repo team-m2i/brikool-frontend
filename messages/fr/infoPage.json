@@ -1,0 +1,23 @@
+{
+  "AccessDeniedPage": {
+    "title": "Accès Restreint",
+    "description": "Vous avez tenté d'accéder à une page qui n'est pas disponible pour vous. Cela peut être dû à une absence de connexion ou à un manque de permissions nécessaires. La page peut également être restreinte ou ne plus être accessible. Veuillez vérifier vos identifiants et vos autorisations ou contactez le support si vous pensez qu'il s'agit d'une erreur.",
+    "button": {
+      "label": "Revenir à la page précédente"
+    }
+  },
+  "NotFoundPage": {
+    "title": "Page Introuvable",
+    "description": "La page que vous recherchez n'existe pas. Elle a peut-être été déplacée, supprimée ou l'URL saisie est incorrecte. Veuillez vérifier l'URL ou utiliser les options de navigation pour revenir à une autre page. Si vous avez besoin d'aide, contactez notre support.",
+    "button": {
+      "label": "Revenir à la page précédente"
+    }
+  },
+  "ErrorPage": {
+    "title": "Erreur Inattendue",
+    "description": "Une erreur inattendue s'est produite lors du traitement de votre demande. Cela peut être dû à un problème temporaire ou à une défaillance imprévue. Veuillez réessayer plus tard ou contacter le support si le problème persiste. Nous nous excusons pour la gêne occasionnée.",
+    "button": {
+      "label": "Revenir à la page précédente"
+    }
+  }
+}

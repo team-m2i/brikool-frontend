@@ -1,10 +1,13 @@
 
 "use client"
 
+import {redirect} from "@/i18n/routing";
+
 function Error() {
+    redirect("/error")
     return (
         <div>
-            error occurred
+            error page
         </div>
     );
 }

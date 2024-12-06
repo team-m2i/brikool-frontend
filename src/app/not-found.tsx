@@ -1,6 +1,6 @@
-import React from 'react';
-
+import {redirect} from "@/i18n/routing";
 function NotFound() {
+    redirect("/not-found")
     return (
         <div>
             not found

@@ -6,13 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes/RBAC/admin-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes/RBAC/admin-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes/RBAC/client-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes/RBAC/client-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes/RBAC/freelancer-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes/RBAC/freelancer-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes/protected-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes/protected-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/routes/public-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/routes/public-routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/gifs/access-denied.gif" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/images/gifs/access-denied.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/access-denied/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/access-denied/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/accueil/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/error.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/error/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/error/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/not-found/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/not-found/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeHeader/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeHeader/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/ThemeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/ThemeSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/navigation/static-navlinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/navigation/static-navlinks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +92,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;feature/add-authorization&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/messages/ar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/messages/fr&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -96,17 +105,17 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/messages/ar" />
       <recent name="$PROJECT_DIR$/messages/fr" />
+      <recent name="$PROJECT_DIR$/messages/ar" />
       <recent name="$PROJECT_DIR$/messages/en" />
       <recent name="$PROJECT_DIR$/src/raw" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app" />
+      <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/src/config/routes/RBAC" />
       <recent name="$PROJECT_DIR$/src/app/[locale]/auth/new" />
       <recent name="$PROJECT_DIR$/src/actions/freelancer" />
-      <recent name="$PROJECT_DIR$/src/app/[locale]/auth/config" />
-      <recent name="$PROJECT_DIR$/src/app/[locale]/auth/flow" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -138,7 +147,9 @@
       <workItem from="1732908530226" duration="1533000" />
       <workItem from="1733263195403" duration="917000" />
       <workItem from="1733334130245" duration="8789000" />
-      <workItem from="1733430924186" duration="684000" />
+      <workItem from="1733430924186" duration="9325000" />
+      <workItem from="1733515610986" duration="2590000" />
+      <workItem from="1733518225238" duration="716000" />
     </task>
     <servers />
   </component>

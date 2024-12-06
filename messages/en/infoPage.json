@@ -1,0 +1,23 @@
+{
+  "AccessDeniedPage": {
+    "title": "Access Restricted",
+    "description": "You tried to access a page that is currently unavailable to you. This could happen if you are not logged into your account or if your account lacks the necessary permissions. The page may also be restricted or no longer accessible. Please verify your credentials and permissions, or contact support if you believe this is a mistake.",
+    "button": {
+      "label": "Return to the previous page"
+    }
+  },
+  "NotFoundPage": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for does not exist. It might have been moved, deleted, or the URL you entered could be incorrect. Please double-check the URL or use the navigation options to return to a different page. If you need further assistance, reach out to our support team.",
+    "button": {
+      "label": "Return to the previous page"
+    }
+  },
+  "ErrorPage": {
+    "title": "Unexpected Error",
+    "description": "An unexpected error occurred while processing your request. This could be due to a temporary system issue or an unforeseen problem. Please try again after some time or contact support if the issue persists. We apologize for any inconvenience caused.",
+    "button": {
+      "label": "Return to the previous page"
+    }
+  }
+}

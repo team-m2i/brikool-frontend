@@ -8,6 +8,7 @@ import {Moon, Sun} from "lucide-react";
 
 interface ThemeSwitcherProps {
     size?: "sm" | "md" | "lg"
+    className: string
 }
 
 const setIconSize = (size: ThemeSwitcherProps["size"]) => {
@@ -22,12 +23,12 @@ const setIconSize = (size: ThemeSwitcherProps["size"]) => {
             return "w-6 h-6";
     }
 }
-function ThemeSwitcher({ size = "md" }: ThemeSwitcherProps) {
+function ThemeSwitcher({ className, size = "md" }: ThemeSwitcherProps) {
     const {theme, setTheme} = useTheme();
 
     const CLASS_NAME = setIconSize(size);
     return (
-        <div>
+        <div className={className}>
             <Button className={"rounded-full"} variant={"ghost"} size={"icon"} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
                 { theme === "dark" && <Moon className={CLASS_NAME} />}
                 { theme === "light" && <Sun className={CLASS_NAME} />}
