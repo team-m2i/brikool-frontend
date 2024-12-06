@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { Logo } from '../ui/logo'
 import { useTranslations } from 'next-intl';
 import { Button } from '../ui/button';
-import Link from 'next/link';
 import AboutUs from '../AboutUs/AboutUs';
+import {Link} from "@/i18n/routing";
 
-export default function page({params : {locale}}: {params : {locale : string}}) {
+export default function Footer() {
     const t = useTranslations('HomePage');
     const [showModal, setShowModal] = useState(false)
 
@@ -35,12 +35,12 @@ export default function page({params : {locale}}: {params : {locale : string}}) 
                     <Button
                         variant="ghost"
                         type="submit"
-                        className="flex bg-black text-white justify-center items-center rounded-md text-sm/6 font-semibold 
+                        className="flex bg-black text-white justify-center items-center rounded-md text-sm/6 font-semibold
                         text-white shadow-sm "
                     >
                         {t('footer.subscribe')}
-                    </Button>  
-                    
+                    </Button>
+
                   </div>
                 </div>
               </div>
@@ -49,11 +49,11 @@ export default function page({params : {locale}}: {params : {locale : string}}) 
               <div>
                 <h3 className="text-sm font-semibold">{t('footer.Information.information')}</h3>
                 <ul className="mt-4 space-y-2 text-sm">
-                  
-                  
-                  
-                  
-                  <li><Link href={`/${locale}`} onClick={() => setShowModal(true)}>{t('navigation.nav1')}</Link></li>
+
+
+
+
+                  <li><Link href={`/`} onClick={() => setShowModal(true)}>{t('navigation.nav1')}</Link></li>
                   <li><Link href="#">Blog</Link></li>
                   <li><Link href="#">{t('footer.Information.testimonials')}</Link></li>
                   <li><Link href="#">{t('footer.Information.events')}</Link></li>
@@ -66,7 +66,7 @@ export default function page({params : {locale}}: {params : {locale : string}}) 
                 <ul className="mt-4 space-y-2 text-sm">
                   <li>{t('footer.HelpfulLinks.services')}</li>
                   <li>{t('footer.HelpfulLinks.supports')}</li>
-                  <li><Link href={`/${locale}/terms-and-privacy`}>{t('footer.HelpfulLinks.terms&privacy')}</Link></li>
+                  <li><Link href={`/terms-and-privacy`}>{t('footer.HelpfulLinks.terms&privacy')}</Link></li>
                 </ul>
               </div>
 

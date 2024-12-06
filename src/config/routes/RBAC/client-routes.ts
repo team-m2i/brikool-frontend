@@ -1,1 +1,1 @@
-export const CLIENT_ROUTES = ["/client"]
+export const CLIENT_ROUTES = ["/user"]

@@ -1,1 +1,1 @@
-export const FREELANCER_ROUTES = ["/dashboard", "/freelancer"]
+export const FREELANCER_ROUTES = ["/dashboard/freelancer"]

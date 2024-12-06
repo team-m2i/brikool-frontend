@@ -1,1 +1,1 @@
-export const ADMIN_ROUTES = ["/admin"]
+export const ADMIN_ROUTES = ["/dashboard/admin"]

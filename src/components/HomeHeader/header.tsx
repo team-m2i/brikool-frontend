@@ -1,22 +1,14 @@
 'use client'
 import Autoplay from 'embla-carousel-autoplay'
-import { useTheme } from 'next-themes'
-import Link from 'next/link'
 import React from 'react'
 import { Button } from '../ui/button'
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
-import { Moon, Sun } from 'lucide-react'
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel'
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
 import { useTranslations } from 'next-intl'
-import Navbar from '../Navbar/page'
+import Navbar from '../Navbar/navbar'
+import {Link} from "@/i18n/routing";
 
-export default function HomeHeader({params : {locale}}: {params : {locale : string}}) {
+export default function HomeHeader() {
 const t = useTranslations('HomePage');
 const entryTitle = [
         { name: t('entrytitle.title2') },
@@ -25,35 +17,13 @@ const entryTitle = [
 ]
 const plugin = React.useRef(
 Autoplay({ delay: 3000, stopOnInteraction: true }))
-const { setTheme } = useTheme()
     
   return (
     
     <>
         <header id="header" className="pt-32">
-          <Navbar params={{
-          locale: `${locale}`
-          }} />
-            <div className="theme fixed top-[600px] right-[20px]">
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <Button variant={"ghost"} size="icon">
-                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                    <span className="sr-only">Toggle theme</span>
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
-                  <DropdownMenuItem onClick={() => setTheme("light")}>
-                    Light
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setTheme("dark")}>
-                    Dark
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
-
+          <Navbar
+           />
             <div className="section1 lg:px-8 flex z-50 justify-evenly items-center ">
               <div className="">
                 <h1 className="text-7xl">
@@ -71,7 +41,7 @@ const { setTheme } = useTheme()
                 </div>
                 <div className="pt-2">
                   <Button variant="default" className="border-none">
-                    <Link href={`/${locale}/${authFlowNavLinks.signUp.href}`} className="text-sm/6 text-white">{t('buttons.getstarted')}</Link>
+                    <Link href={authFlowNavLinks.signUp.href} className="text-sm/6 text-white">{t('buttons.getstarted')}</Link>
                   </Button>
                 </div>
                 
