@@ -35,9 +35,11 @@ export function withAuthMiddleware(middleware: CustomMiddleware) {
             const token = await  getDecodedToken(request)
             const user = await getLoggedInUser(request)
 
-            // STEP1: Redirect new user to new freelancer page if user has role freelancer
+            // STEP1: Redirect new user to new freelancer page if user has role freelancer & newUser flag is true
             if(token) {
+                console.log("______________________ Check new user ______________________")
                 if ( user?.newUser && !request.url.includes(authFlowNavLinks.newFreelancer.href) && token.role === 'Freelancer') {
+                    console.log("-> Redirecting to new freelancer page")
                     return redirectRequest(request, authFlowNavLinks.newFreelancer.href)
                 }
             }

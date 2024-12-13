@@ -1,0 +1,33 @@
+{
+  "ConfirmEmailPage": {
+    "title": "Confirmer l'email",
+    "description": "Nous avons envoyé un code à 6 chiffres à votre adresse email. Veuillez saisir ce code ci-dessous pour confirmer votre adresse email.",
+    "field": {
+      "token": {
+        "label": "code",
+        "error": {
+          "required": "Veuillez saisir votre code de vérification (OTP)",
+          "invalid": "Le code OTP doit contenir exactement 6 chiffres"
+        }
+      }
+    },
+    "toast": {
+      "400": {
+        "title": "Erreur",
+        "message": "Le code OTP saisi n'est pas valide ou a expiré"
+      },
+      "200": {
+        "title": "Succès",
+        "message": "L'email a été vérifié avec succès, vous serez redirigé vers l'étape suivante dans quelques secondes"
+      },
+      "500": {
+        "title": "Erreur du serveur",
+        "message": "Une erreur s'est produite. Veuillez réessayer plus tard."
+      }
+    },
+    "button": {
+      "submit": "Confirmer l'email",
+      "loading": "Chargement"
+    }
+  }
+}

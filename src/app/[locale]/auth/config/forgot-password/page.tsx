@@ -33,8 +33,10 @@ function ForgotPasswordPage() {
                 title: t(`toast.${res.message}.title`),
                 description: t(`toast.${res.message}.message`),
             });
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            router.push(authFlowNavLinks.resetPassword.href+"?email="+data.email);
+            if(res.status == "success"){
+                await new Promise(resolve => setTimeout(resolve, 1000))
+                router.replace(`${authFlowNavLinks.confirmEmail.href}?requestUid=${res.optional}&origin=forgot-password`);
+            }
         }
         else
             toast({
@@ -43,7 +45,7 @@ function ForgotPasswordPage() {
             });
     };
     return (
-        <div className={"pt-12 w-full min-h-screen flex items-center justify-center"}>
+        <div className={"pt-12 w-full min-h-screen flex items-center justify-center px-3"}>
             <Form {...form} >
                 <Card className="p-4 md:py-16 md:px-24">
                     <CardHeader className={""}>

@@ -36,6 +36,19 @@ export const forgotPasswordModelSchema = z.object({
     email: z.string().email()
 })
 
+export const forgotPasswordResponseModelSchema = z.object({
+    uid: z.string().uuid()
+})
+
+export const confirmEmailModelSchema = z.object({
+    token: z.string().length(6),
+    uid: z.string().email()
+})
+
+export const resetPasswordModelSchema = z.object({
+    newPassword: z.string().min(8),
+    uid: z.string().length(6),
+})
 export type TSignInModel = z.infer<typeof signInModelSchema>;
 export type TJwtModel = z.infer<typeof jwtModelSchema>;
 export type TSignUpModel = z.infer<typeof signUpModelSchema>;
@@ -45,3 +58,6 @@ export type TSignInResponseModel = {
     jwt: TJwtModel
 }
 export type TForgotPasswordModel = z.infer<typeof forgotPasswordModelSchema>;
+export type TForgotPasswordResponseModel = z.infer<typeof forgotPasswordResponseModelSchema>;
+export type TConfirmEmailModel = z.infer<typeof confirmEmailModelSchema>;
+export type TResetPasswordModel = z.infer<typeof resetPasswordModelSchema>

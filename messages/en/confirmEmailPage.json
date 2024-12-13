@@ -1,0 +1,33 @@
+{
+  "ConfirmEmailPage": {
+    "title": "Confirm email",
+    "description": "We have sent a 6-digit code to your email. Please enter the code below to confirm your email.",
+    "field": {
+      "token": {
+        "label": "token",
+        "error": {
+          "required": "Please enter your verification OTP",
+          "invalid": "The OTP should have exactly 6 digits"
+        }
+      }
+    },
+    "toast": {
+      "400": {
+        "title": "Error",
+        "message": "The OTP you entered is not valid or has expired"
+      },
+      "200": {
+        "title": "Success",
+        "message": "The email has been verified successfully, you will be redirected to next step in few seconds"
+      },
+      "500": {
+        "title": "Server Error",
+        "message": "Something went wrong. Please try again later."
+      }
+    },
+    "button": {
+      "submit": "Confirm email",
+      "loading": "Loading"
+    }
+  }
+}
