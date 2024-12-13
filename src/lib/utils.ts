@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge"
 import {NextRequest, NextResponse} from "next/server";
 import {decode} from "jsonwebtoken";import {APP_BASE_URL} from "@/lib/constants";
 import {getToken} from "@auth/core/jwt";
-import {TSignInResponseModel, TSignInUserModel} from "@/definitions/models/auth-flow-model-schema";
+import {TSessionUser, TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -47,7 +47,7 @@ export const checkRouteAuthorization = (routes: string[], url: string): boolean 
 export const getLoggedInUser = async (req: NextRequest) => {
   const session = await getToken({ req, secret: process.env.AUTH_SECRET })
   if (session?.user) {
-    return session.user as TSignInUserModel
+    return session.user as TSessionUser
   }
   return null
 }

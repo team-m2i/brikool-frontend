@@ -8,8 +8,6 @@ import { CustomMiddleware } from './chain'
 import {PUBLIC_ROUTES} from "@/config/routes/public-routes";
 import {PROTECTED_ROUTES} from "@/config/routes/protected-routes";
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
-import {getToken} from "@auth/core/jwt";
-import {TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
 import {
     checkRouteAuthorization,
     getDecodedToken, getLoggedInUser,
@@ -19,6 +17,8 @@ import {ADMIN_ROUTES} from "@/config/routes/RBAC/admin-routes";
 import {FREELANCER_ROUTES} from "@/config/routes/RBAC/freelancer-routes";
 import {CLIENT_ROUTES} from "@/config/routes/RBAC/client-routes";
 import {staticNavLinks} from "@/config/navigation/static-navlinks";
+import {APP_BASE_URL} from "@/lib/constants";
+import {json} from "node:stream/consumers";
 
 export function withAuthMiddleware(middleware: CustomMiddleware) {
     return async (
@@ -26,7 +26,6 @@ export function withAuthMiddleware(middleware: CustomMiddleware) {
         event: NextFetchEvent,
         response: NextResponse
     ) => {
-        const token = await getToken({ req: request, secret: process.env.AUTH_SECRET }) as TSignInResponseModel
         const isPublicRoutes = checkRouteAuthorization(PUBLIC_ROUTES, request.url)
         const isProtectedRoute = checkRouteAuthorization(PROTECTED_ROUTES, request.url)
         console.log("-> is public route", isPublicRoutes)
@@ -34,11 +33,26 @@ export function withAuthMiddleware(middleware: CustomMiddleware) {
         if(isProtectedRoute) {
             const token = await  getDecodedToken(request)
             const user = await getLoggedInUser(request)
-
-            // STEP1: Redirect new user to new freelancer page if user has role freelancer
+            // STEP1: User related first checks
             if(token) {
+                // STEP1_1: Redirect new user to new freelancer page if user has role freelancer & newUser flag is true
+                console.log("______________________ Check new user ______________________")
                 if ( user?.newUser && !request.url.includes(authFlowNavLinks.newFreelancer.href) && token.role === 'Freelancer') {
+                    console.log("-> Redirecting to new freelancer page")
                     return redirectRequest(request, authFlowNavLinks.newFreelancer.href)
+                }
+                // STEP1_2: Refresh user token if token is expired
+                // TODO: Must synchronize with backend timestamp to check token expiration (use UTC with buffer)
+                if(token.exp && (token.exp < Date.now() / 1000)) {
+                    console.log("!-> Token has expired")
+                    // Refresh token
+                    const res = await fetch(APP_BASE_URL+ "/api/refresh_token",
+                        {
+                            method: "POST",
+                            body: JSON.stringify({
+                                refresh_token : user?.jwt.refresh_token
+                            })
+                        })
                 }
             }
 

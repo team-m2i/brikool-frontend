@@ -1,15 +1,17 @@
 "use server";
 
-import { signIn } from "@/lib/auth";
+import {auth, signIn, signOut} from "@/lib/auth";
 import {
-    forgotPasswordSchema,
+    confirmEmailSchema,
+    forgotPasswordSchema, resetPasswordSchema,
     signInSchema,
-    signUpSchema,
-    TForgotPasswordSchema, TSignUpSchema
+    signUpSchema, TConfirmEmailSchema, TForgotPasswordResponseSchema,
+    TForgotPasswordSchema, TResetPasswordSchema, TSignUpSchema
 } from "@/definitions/schema/auth-flow-schema";
-import {forgotPassword, signUp} from "@/data-access/auth-flow";
-import {BACKEND_SERVER_NAME} from "@/lib/constants";
+import {confirmEmail, forgotPassword, resetPassword, signUp} from "@/data-access/auth-flow";
+import {APP_BASE_URL, BACKEND_SERVER_NAME} from "@/lib/constants";
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
+import {TSessionUser, TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
 
 export const handleSignUpAction = async (data: TSignUpSchema): Promise<TAuthActionState> => {
     const returnState: TAuthActionState = {
@@ -86,22 +88,22 @@ export const handleSignInAction = async (formData: FormData): Promise<TAuthActio
 export const handleForgotPasswordAction = async (data: TForgotPasswordSchema) => {
     const returnState: TAuthActionState = {
         status: "error",
-        message: ""
+        message: "",
+        optional: ""
     }
     const parsedData  = forgotPasswordSchema.safeParse(data)
-    console.log("called for: " + parsedData)
+    // TODO: Request backend to add more return status to solve the ambiguity caused by error state 400
     if(parsedData.success){
-        const forgotPasswordData: TForgotPasswordSchema = {
-            email: parsedData.data.email
-        }
-        const res = await forgotPassword(forgotPasswordData)
+        const res = await forgotPassword(parsedData.data)
         switch(res.status){
             case 200:
                 returnState.status = "success"
                 returnState.message = "200"
+                const data = await res.json() as TForgotPasswordResponseSchema
+                returnState.optional = data.requestUid
                 break
             case 400:
-                returnState.message = "400"
+                returnState.message = "404"
                 break
             case 404:
                 returnState.message = "404"
@@ -117,7 +119,74 @@ export const handleForgotPasswordAction = async (data: TForgotPasswordSchema) =>
     }
 }
 
+export const refreshUserSession = async() => {
+    const user = (await auth())?.user as TSessionUser;
+    console.log("------- --------- ----------- called within refreshToken action: ", user)
+    await signIn(BACKEND_SERVER_NAME, {email: "", password: "", refreshToken: user?.jwt?.refresh_token});
+}
 export type TAuthActionState = {
     status: "success" | "error";
     message: string;
+    optional?: string;
 };
+
+export const handleConfirmEmail = async (data: TConfirmEmailSchema) => {
+    const returnState: TAuthActionState = {
+        status: "error",
+        message: ""
+    }
+    const parsedData = confirmEmailSchema.safeParse(data)
+    if(parsedData.success) {
+        const res  = await confirmEmail(parsedData.data);
+        switch(res.status){
+            case 200:
+                returnState.status = "success"
+                returnState.message = "200"
+                break
+            case 400:
+                returnState.message = "400"
+                break
+            case 404:
+                returnState.message = "404"
+                break
+            default:
+                returnState.message = "500"
+        }
+        return returnState
+    }else {
+        returnState.message = "400"
+        return returnState
+    }
+}
+
+export const handleResetPassword = async(data: TResetPasswordSchema) => {
+    const returnState: TAuthActionState = {
+        status: "error",
+        message: ""
+    }
+    const parsedData = resetPasswordSchema.safeParse(data)
+    if(parsedData.success){
+        const res  = await resetPassword(parsedData.data)
+        // TODO: Request backend to add more return status to solve the ambiguity caused by error state 400
+        switch(res.status){
+            case 200:
+                returnState.status = "success"
+                returnState.message = "200"
+                break
+            case 400:
+                returnState.message = "400"
+                break
+            default:
+                returnState.message = "500"
+        }
+        return returnState
+    }else {
+        returnState.message = "400"
+        return returnState
+    }
+}
+
+export const logout = async(redirectTo?: string) => {
+    // the redirectTo url must contain the prefix of locale
+    await (redirectTo ? signOut({redirectTo: APP_BASE_URL + redirectTo}) : signOut())
+}

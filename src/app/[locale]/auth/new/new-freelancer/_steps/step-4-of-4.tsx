@@ -1,13 +1,14 @@
 "use client"
 import {CardDescription, CardHeader, CardTitle} from "@/components/ui/card";
 import {cn} from "@/lib/utils";
-import {Link, redirect, useRouter} from "@/i18n/routing";
+import {Link, useRouter} from "@/i18n/routing";
 import FooterNav from "@/app/[locale]/auth/new/new-freelancer/nav-footer";
 import {useNewFreelancerFormContext} from "@/context/multisteps-newuser-context";
 import {submitNewFreelancerAction} from "@/actions/common/new-user-actions";
 import {TNavToggle} from "@/app/[locale]/auth/new/new-freelancer/page";
 import {useTranslations} from "next-intl";
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
+import {refreshUserSession} from "@/actions/common/auth-flow-actions";
 
 function Step4({toggleNav, showToastMessage} : {toggleNav: (action: TNavToggle) => void, showToastMessage: (title: string, description: string) => void}) {
     const t = useTranslations("NewFreelancerPage.step4")
@@ -23,7 +24,7 @@ function Step4({toggleNav, showToastMessage} : {toggleNav: (action: TNavToggle) 
                     t(`toast.${res.status}.message`),
                 );
                 if(res.status == "success"){
-
+                    await refreshUserSession()
                     // wait for 2s before redirecting
                     await new Promise(resolve => setTimeout(resolve, 2000))
                     router.replace(authFlowNavLinks.profile.href)
