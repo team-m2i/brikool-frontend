@@ -8,7 +8,7 @@ import {
 } from "@/definitions/schema/auth-flow-schema";
 import {
     TConfirmEmailModel,
-    TForgotPasswordModel, TJwtModel, TResetPasswordModel,
+    TForgotPasswordModel, TResetPasswordModel,
     TSignInModel,
     TSignInResponseModel,
     TSignUpModel
@@ -21,8 +21,6 @@ import {
     convertLocalToExternalSignUpModel
 } from "@/definitions/transformers/auth-flow-dto";
 import { NextResponse } from "next/server";
-import {redirect} from "@/i18n/routing";
-import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
 
 export const checkUserExists = async (email: string) => {
     const postData = { email: email };

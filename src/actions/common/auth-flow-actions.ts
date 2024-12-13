@@ -1,6 +1,6 @@
 "use server";
 
-import {signIn, signOut} from "@/lib/auth";
+import {auth, signIn, signOut} from "@/lib/auth";
 import {
     confirmEmailSchema,
     forgotPasswordSchema, resetPasswordSchema,
@@ -11,6 +11,7 @@ import {
 import {confirmEmail, forgotPassword, resetPassword, signUp} from "@/data-access/auth-flow";
 import {APP_BASE_URL, BACKEND_SERVER_NAME} from "@/lib/constants";
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
+import {TSessionUser, TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
 
 export const handleSignUpAction = async (data: TSignUpSchema): Promise<TAuthActionState> => {
     const returnState: TAuthActionState = {
@@ -119,7 +120,9 @@ export const handleForgotPasswordAction = async (data: TForgotPasswordSchema) =>
 }
 
 export const refreshUserSession = async() => {
-    await signIn(BACKEND_SERVER_NAME, {email: "", password: ""});
+    const user = (await auth())?.user as TSessionUser;
+    console.log("------- --------- ----------- called within refreshToken action: ", user)
+    await signIn(BACKEND_SERVER_NAME, {email: "", password: "", refreshToken: user?.jwt?.refresh_token});
 }
 export type TAuthActionState = {
     status: "success" | "error";

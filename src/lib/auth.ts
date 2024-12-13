@@ -14,46 +14,49 @@ export const authOptions: NextAuthConfig = {
             name: "Spring Boot",
             credentials: {
                 email: { label: "Email", type: "text" },
-                password: { label: "Password", type: "password" }
+                password: { label: "Password", type: "password" },
+                refreshToken:{label: "refreshToken", type: "text"}
             },
             authorize: async (credentials) => {
-                if (!credentials || (credentials.email === "" && credentials.password === "")) {
-                    // No credentials provided
-                    const user = (await auth())?.user as TSignInResponseModel;
-                    if(user?.jwt?.refresh_token) {
-                        const session  = await refreshToken(user.jwt.refresh_token);
-                        console.log(" ________ new generated session: ", session)
+                if (credentials) {
+
+                    if(credentials?.refreshToken) {
+                        // refresh session with refresh token
+                        const session  = await refreshToken(credentials.refreshToken as string);
+                        console.log("----> session is updated? ",session != null)
                         if(session) {
                             return {...session.user, jwt: session.jwt}
                         }else {
                             console.error("Failed to refresh token");
                         }
-                    }else {
-                        console.error("Refresh token not found - No credentials provided for sign-in");
+                    }
+                    if(credentials?.email && credentials.password) {
+                        // Log in with credentials
+                        const signInData: TSignInSchema = {
+                            email: credentials.email as string,
+                            password: credentials.password as string
+                        };
+
+                        try {
+                            const res = await customSignIn(signInData);
+                            if (res.ok) {
+                                const data: TSignInResponseModel | null = await res.json();
+                                if (data?.jwt) {
+
+                                    return {...data.user, jwt: data.jwt};
+                                } else {
+                                    console.error("Authorization failed:", data);
+                                }
+                            } else {
+                                console.error("Failed to sign in:", res.statusText);
+                            }
+                        } catch (error) {
+                            console.error("Error during sign-in:", error);
+                        }
                     }
                 }else {
-                    // Log in with credentials
-                    const signInData: TSignInSchema = {
-                        email: credentials.email as string,
-                        password: credentials.password as string
-                    };
-
-                    try {
-                        const res = await customSignIn(signInData);
-                        if (res.ok) {
-                            const data: TSignInResponseModel | null = await res.json();
-                            if (data?.jwt) {
-
-                                return {...data.user, jwt: data.jwt};
-                            } else {
-                                console.error("Authorization failed:", data);
-                            }
-                        } else {
-                            console.error("Failed to sign in:", res.statusText);
-                        }
-                    } catch (error) {
-                        console.error("Error during sign-in:", error);
-                    }
+                    // No credentials provided
+                    console.error("Refresh token not found - No credentials provided for sign-in");
                 }
                 return null
             },
@@ -69,7 +72,6 @@ export const authOptions: NextAuthConfig = {
         jwt({ token, user }) {
             if(user){
                 const decodedToken = decode(user?.jwt.access_token);
-                console.log(decodedToken)
                 return {user: {...user}, exp: decodedToken?.exp}
             }
             return token

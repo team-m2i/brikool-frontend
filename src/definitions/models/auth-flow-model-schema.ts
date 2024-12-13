@@ -57,6 +57,9 @@ export type TSignInResponseModel = {
     user: TSignInUserModel,
     jwt: TJwtModel
 }
+export type TSessionUser = TSignInUserModel & {
+    jwt: TJwtModel
+}
 export type TForgotPasswordModel = z.infer<typeof forgotPasswordModelSchema>;
 export type TForgotPasswordResponseModel = z.infer<typeof forgotPasswordResponseModelSchema>;
 export type TConfirmEmailModel = z.infer<typeof confirmEmailModelSchema>;
