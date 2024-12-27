@@ -1,12 +1,20 @@
-import NextAuth, {NextAuthConfig} from "next-auth";
+import NextAuth, {NextAuthConfig, User} from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import {BACKEND_SERVER_NAME} from "@/lib/constants";
 import {TSignInSchema} from "@/definitions/schema/auth-flow-schema";
 import {customSignIn, refreshToken} from "@/data-access/auth-flow";
 import {TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
 import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
-import {decode} from "jsonwebtoken";
+import {decode, JwtPayload} from "jsonwebtoken";
 
+export interface ExtendedUser extends User {
+    jwt: {
+        access_token: string;
+    };
+}
+export interface ExtendedJwtPayload extends JwtPayload {
+    exp: number;
+}
 export const authOptions: NextAuthConfig = {
     providers: [
         Credentials({
@@ -71,8 +79,8 @@ export const authOptions: NextAuthConfig = {
         },
         jwt({ token, user }) {
             if(user){
-                const decodedToken = decode(user?.jwt.access_token);
-                return {user: {...user}, exp: decodedToken?.exp}
+                const decodedToken = decode((user as ExtendedUser)?.jwt.access_token);
+                return { user: { ...user }, exp: (decodedToken as ExtendedJwtPayload)?.exp };
             }
             return token
         },
