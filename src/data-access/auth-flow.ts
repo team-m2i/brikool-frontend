@@ -1,14 +1,22 @@
 import "server-only";
 import { authFlowEndpoints } from "@/config/endpoints/auth-flow-endpoints";
-import {TForgotPasswordSchema, TSignInSchema, TSignUpSchema} from "@/definitions/schema/auth-flow-schema";
 import {
-    TForgotPasswordModel,
+    TConfirmEmailSchema,
+    TForgotPasswordSchema, TResetPasswordSchema,
+    TSignInSchema,
+    TSignUpSchema
+} from "@/definitions/schema/auth-flow-schema";
+import {
+    TConfirmEmailModel,
+    TForgotPasswordModel, TResetPasswordModel,
     TSignInModel,
     TSignInResponseModel,
     TSignUpModel
 } from "@/definitions/models/auth-flow-model-schema";
 import {
-    convertLocalToExternalForgotPasswordModel,
+    convertExternalToLocalForgotPasswordResponse,
+    convertLocalToExternalConfirmEmailModel,
+    convertLocalToExternalForgotPasswordModel, convertLocalToExternalResetPasswordModel,
     convertLocalToExternalSignInModel,
     convertLocalToExternalSignUpModel
 } from "@/definitions/transformers/auth-flow-dto";
@@ -109,7 +117,8 @@ export const customSignIn = async(signInData: TSignInSchema): Promise<NextRespon
 
 export const forgotPassword = async (postData: TForgotPasswordSchema) => {
     try {
-        const data: TForgotPasswordModel | null = convertLocalToExternalForgotPasswordModel(postData)
+        console.log("--- target endpoint: ", authFlowEndpoints.config.forgotPassword());
+        const data: TForgotPasswordModel | null = convertLocalToExternalForgotPasswordModel(postData);
         const res = await fetch(authFlowEndpoints.config.forgotPassword(), {
             method: "POST",
             headers: {
@@ -117,8 +126,20 @@ export const forgotPassword = async (postData: TForgotPasswordSchema) => {
             },
             body: JSON.stringify(data)
         });
-        if (!res.ok)
-            console.error("Error during forgot password")
+
+        if (res.ok) {
+            const resData = await res.json();
+            const resp = convertExternalToLocalForgotPasswordResponse(resData);
+            if (resp) {
+                return new NextResponse(JSON.stringify({ requestUid: resp.requestUid }), {
+                    status: res.status,
+                    statusText: res.statusText
+                });
+            }
+        } else {
+            console.error("Error during forgot password");
+        }
+
         return new NextResponse(null, {
             status: res.status,
             statusText: res.statusText
@@ -129,5 +150,86 @@ export const forgotPassword = async (postData: TForgotPasswordSchema) => {
             status: 500,
             statusText: "Internal server error"
         });
+    }
+};
+
+export const confirmEmail = async(postData: TConfirmEmailSchema) => {
+    try{
+        const data: TConfirmEmailModel | null = convertLocalToExternalConfirmEmailModel(postData)
+        const endpoint = postData.origin === "forgot-password"
+            ? authFlowEndpoints.config.confirmEmail.reset()
+            : postData.origin === "sign-up"
+                ? authFlowEndpoints.config.confirmEmail.activate()
+                : ""
+        const res = await fetch(endpoint, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        if (!res.ok)
+            console.error("Error during confirm email")
+        console.log("___________ ENDPOINT: ", endpoint)
+        console.log(data)
+        console.log(res)
+        return new NextResponse(null, {
+            status: res.status,
+            statusText: res.statusText
+        });
+
+    }catch(e) {
+        console.error("Error during confirm email:", e);
+        return new NextResponse(null, {
+            status: 500,
+            statusText: "Internal server error"
+        });
+    }
+}
+export const resetPassword = async(postData: TResetPasswordSchema) => {
+    try {
+        const data : TResetPasswordModel | null  = convertLocalToExternalResetPasswordModel(postData)
+        const res = await fetch(authFlowEndpoints.config.resetPassword(), {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+
+        if(!res.ok)
+            console.error("Error during reset password")
+        return new NextResponse(null, {
+            status: res.status,
+            statusText: res.statusText
+        })
+    }catch(err) {
+        console.error("Error during reset password: " , err)
+        return new NextResponse(null, {
+            status: 500,
+            statusText: "Internal server error"
+        });
+    }
+}
+
+export const refreshToken = async (refreshToken: string) => {
+    const postData = { refresh_token: refreshToken };
+    try {
+        const res = await fetch(authFlowEndpoints.jwt.refreshToken(), {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(postData)
+        });
+        if (res.ok) {
+            return await res.json() as TSignInResponseModel;
+        } else {
+            console.error("Error refreshing token:", res.statusText);
+            return null;
+        }
+    } catch (error) {
+        console.error("Error refreshing token:", error);
+        return null;
     }
 }

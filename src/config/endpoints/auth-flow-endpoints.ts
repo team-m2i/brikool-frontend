@@ -12,6 +12,10 @@ type AuthFlowEndpoints = {
     config: {
         forgotPassword: () => string;
         resetPassword: () => string;
+        confirmEmail: {
+            reset: () => string,
+            activate: () => string
+        }
     }
     jwt: {
         verifyToken: () => string;
@@ -27,8 +31,12 @@ export const authFlowEndpoints: AuthFlowEndpoints = {
         checkEmail: () => `${base_path}/checkEmail`,
     },
     config: {
-        forgotPassword: () => `${base_path}/forgotPassword`,
-        resetPassword: () => `${base_path}/resetPassword`,
+        forgotPassword: () => `${base_path}/reset_password/request`,
+        resetPassword: () => `${base_path}/reset_password/reset`,
+        confirmEmail: {
+            reset: () => `${base_path}/reset_password/confirm`,
+            activate: () => `${base_path}/confirm-email`
+        }
     },
     jwt: {
         verifyToken: () => `${base_path}/verifyJwt`,

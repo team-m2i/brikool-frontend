@@ -13,34 +13,47 @@ import {useRouter} from "@/i18n/routing";
 import {InputPassword} from "@/components/ui/input-password";
 import {useEffect, useState} from "react";
 import {Progress} from "@/components/ui/progress";
+import {useSearchParams} from "next/navigation";
+import {handleResetPassword, logout} from "@/actions/common/auth-flow-actions";
+import {toast} from "@/hooks/use-toast";
+import {authFlowNavLinks} from "@/config/navigation/auth-flow-navlinks";
 
-function ResetPasswordPage() {
+function ResetPasswordPage({params: {locale}}:{params: {locale: string}}) {
     const t = useTranslations('ResetPasswordPage');
-    const router = useRouter();
+    const searchParams = useSearchParams()
+    const router = useRouter()
+    const requestUId = searchParams.get("requestUid")
+
+    if(!requestUId) {
+        router.back()
+    }
     const form = useForm({
         resolver: zodResolver(resetPasswordSchema),
         mode: "onSubmit",
         defaultValues: {
+            requestUid: requestUId || "",
             password: "",
             confirmPassword: ""
         }
     });
     const onSubmit = async (data: TResetPasswordSchema) => {
-        // const res = await handleForgotPasswordAction(data);
-        // console.log("res", res);
-        // if(res){
-        //     toast({
-        //         title: t(`toast.${res.message}.title`),
-        //         description: t(`toast.${res.message}.message`),
-        //     });
-        //     await new Promise(resolve => setTimeout(resolve, 2000));
-        //     router.push(authFlowNavLinks.resetPassword.href+"?email="+data.email);
-        // }
-        // else
-        //     toast({
-        //         title: t(`toast.500.title`),
-        //         description: t(`toast.500.message`),
-        //     });
+        const res = await handleResetPassword(data);
+        if(res){
+            toast({
+                title: t(`toast.${res.message}.title`),
+                description: t(`toast.${res.message}.message`),
+            });
+            if(res.status == "success"){
+                // wait for 2s before redirecting to login page
+                await new Promise(resolve => setTimeout(resolve, 1000))
+                await logout(locale + authFlowNavLinks.singIn.href)
+            }
+        }
+        else
+            toast({
+                title: t(`toast.500.title`),
+                description: t(`toast.500.message`),
+            });
     };
     const [password, setPassword] = useState("");
     const [passwordStrength, setPasswordStrength] = useState(0)
@@ -63,7 +76,7 @@ function ResetPasswordPage() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <form className={"grid gap-4 "}>
+                        <form onSubmit={form.handleSubmit(onSubmit)} className={"grid gap-4 "}>
                             <FormField
                                 name={"password"}
                                 control={form.control}
@@ -114,7 +127,7 @@ function ResetPasswordPage() {
                                 )}
                             />
                             <FormItem>
-                                <Button onClick={form.handleSubmit(onSubmit)} className={"w-full"} disabled={form.formState.isSubmitting}>
+                                <Button className={"w-full"} disabled={form.formState.isSubmitting}>
                                     {form.formState.isSubmitting ? t("button.loading") : t("button.submit")}
                                 </Button>
                             </FormItem>

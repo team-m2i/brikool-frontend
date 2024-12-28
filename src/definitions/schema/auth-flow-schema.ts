@@ -44,6 +44,7 @@ const forgotPasswordSchema = z.object({
 })
 
 const resetPasswordSchema = z.object({
+    requestUid: z.string().uuid(),
     password: z.string().min(8, {
         message: "invalid",
     }),
@@ -58,11 +59,26 @@ const resetPasswordSchema = z.object({
     path: ["password"]
 });
 
+const confirmEmailSchema = z.object({
+    token: z.string({
+        message: "required"
+    }).length(6, {
+        message: "invalid"
+    }),
+    requestUid: z.string().uuid(),
+    origin: z.enum(["forgot-password", "sign-up"])
+})
+const forgotPasswordResponseSchema = z.object({
+    requestUid: z.string().uuid()
+})
+
 type TSignUpSchema = z.infer<typeof signUpSchema>
 type TSignInSchema = z.infer<typeof signInSchema>
 type TSignInRequestSchema = z.infer<typeof signInRequestSchema>
 type TForgotPasswordSchema = z.infer<typeof forgotPasswordSchema>
 type TResetPasswordSchema = z.infer<typeof resetPasswordSchema>
+type TConfirmEmailSchema = z.infer<typeof confirmEmailSchema>
+type TForgotPasswordResponseSchema = z.infer<typeof forgotPasswordResponseSchema>
 
 export {
     signUpSchema,
@@ -70,9 +86,13 @@ export {
     signInRequestSchema,
     forgotPasswordSchema,
     resetPasswordSchema,
+    confirmEmailSchema,
+    forgotPasswordResponseSchema,
     type TSignUpSchema,
     type TSignInSchema,
     type TSignInRequestSchema,
     type TForgotPasswordSchema,
     type TResetPasswordSchema,
+    type TConfirmEmailSchema,
+    type TForgotPasswordResponseSchema,
 }

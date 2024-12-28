@@ -1,12 +1,13 @@
 import React, {Suspense, ReactNode} from 'react'
+type TRole = 'admin' | 'freelancer'
+const ROLE: TRole = 'freelancer'
+import Sidebar from "@/components/Sidebar";
+import Header from "@/components/Header";
 
-type TRole = 'admin' | 'freelancer' | 'client';  // Ajout de "client"
-const ROLE: TRole = 'client';  // Exemple de rôle "client"
-
-export default function Layout({admin, freelancer, client}: {admin: ReactNode, freelancer: ReactNode, client: ReactNode}) {
+export default function Layout({admin, freelancer}: {admin: ReactNode, freelancer: ReactNode}) {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            {ROLE === 'admin' ? admin : ROLE === 'freelancer' ? freelancer : client}
+            {ROLE === 'admin' ? admin : freelancer}
         </Suspense>
-    );
+    );
 }

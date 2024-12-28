@@ -19,6 +19,10 @@ export const authFlowNavLinks = {
         title: "Reset password",
         href: "/auth/config/reset-password"
     },
+    confirmEmail: {
+        title: "Confirm email",
+        href: "/auth/config/confirm-email"
+    },
     changePassword: {
         title: "Change password",
         href: "/auth/config/change-password"
