@@ -18,7 +18,7 @@ import {FREELANCER_ROUTES} from "@/config/routes/RBAC/freelancer-routes";
 import {CLIENT_ROUTES} from "@/config/routes/RBAC/client-routes";
 import {staticNavLinks} from "@/config/navigation/static-navlinks";
 import {APP_BASE_URL} from "@/lib/constants";
-import {json} from "node:stream/consumers";
+
 
 export function withAuthMiddleware(middleware: CustomMiddleware) {
     return async (

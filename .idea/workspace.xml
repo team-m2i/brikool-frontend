@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/common/auth-flow-actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/common/auth-flow-actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-access/auth-flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-access/auth-flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/definitions/models/auth-flow-model-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/models/auth-flow-model-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,21 +74,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/reset-password&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/messages/ar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/add-cypress-e2e",
+    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/messages/ar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/messages/ar" />
@@ -111,7 +107,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.24807.6" />
       </set>
     </attachedChunks>
   </component>
@@ -143,6 +139,9 @@
       <workItem from="1733689705021" duration="1180000" />
       <workItem from="1733753952467" duration="29675000" />
       <workItem from="1734111498713" duration="11134000" />
+      <workItem from="1734539759303" duration="305000" />
+      <workItem from="1734540102387" duration="345000" />
+      <workItem from="1734812459673" duration="6625000" />
     </task>
     <servers />
   </component>

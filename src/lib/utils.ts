@@ -4,6 +4,7 @@ import {NextRequest, NextResponse} from "next/server";
 import {decode} from "jsonwebtoken";import {APP_BASE_URL} from "@/lib/constants";
 import {getToken} from "@auth/core/jwt";
 import {TSessionUser, TSignInResponseModel} from "@/definitions/models/auth-flow-model-schema";
+import {ExtendedJwtPayload} from "@/lib/auth";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -58,7 +59,7 @@ export const getDecodedToken = async (req: NextRequest) => {
     const user = session.user as TSignInResponseModel
     const token =user.jwt.access_token
     const decoded = decode(token)
-    return decoded
+    return decoded as ExtendedJwtPayload
   }
   return null
 }
