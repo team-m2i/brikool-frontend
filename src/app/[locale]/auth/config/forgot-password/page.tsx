@@ -72,12 +72,12 @@ function ForgotPasswordPage() {
                                             <Input placeholder={"JohnDoe@example.com"} {...field}
                                                    className={"h-12 secondary-text w-full"}/>
                                         </FormControl>
-                                        {form.getFieldState("email").error && <div className="text-red-500 text-sm">{t(`field.email.error.required`)}</div>}
+                                        {form.getFieldState("email").error && <div className="text-red-500 text-sm">{t(`field.email.error.${form.getFieldState("email").error?.message}`)}</div>}
                                     </div>
                                 )}
                             />
                             <FormItem>
-                                <Button onClick={form.handleSubmit(onSubmit)} className={"w-full"} disabled={form.formState.isSubmitting}>
+                                <Button type={"submit"} onClick={form.handleSubmit(onSubmit)} className={"w-full"} disabled={form.formState.isSubmitting}>
                                     {form.formState.isSubmitting ? t("button.loading") : t("button.submit")}
                                 </Button>
                             </FormItem>

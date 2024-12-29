@@ -1,0 +1,72 @@
+{
+  "TermsAndPrivacyPage": {
+    "title": "Terms and Privacy",
+    "clause": {
+      "introduction": {
+        "title": "Introduction",
+        "content": {
+          "description": "Welcome to Brikool, a local freelance platform designed to connect clients with talented freelancers. By accessing or using Brikool, you agree to comply with and be bound by the following terms and conditions. Please read them carefully as they contain important information about your rights and obligations."
+        }
+      },
+      "userConduct": {
+        "title": "User Conduct",
+        "content": {
+          "description": "We are committed to maintaining a safe and respectful community. The following activities are strictly prohibited on Brikool:",
+          "list": "[\"Posting false, misleading, or defamatory content\", \"Harassing, threatening, or discriminating against other users\",\"Violating the intellectual property rights of others\", \"Engaging in fraudulent or illegal activities\",\"Attempting to access or interfere with the platform's systems\",\"Using the platform to promote or distribute malware\",\"Violating any applicable laws or regulations\",\"Posting obscene, offensive, or defamatory content\",\"Participating in hate speech, racism, or discriminatory behavior\",\"Engaging in any other activity that may harm the platform or its users\"]",
+          "consequences": "Users who violate these guidelines may be subject to account suspension or termination. . We take reports of misconduct seriously and will investigate all cases thoroughly"
+        }
+      },
+      "userResponsibilities": {
+        "title": "User Responsibilities",
+        "content": {
+          "description": "To ensure a positive experience for all users, we ask that you adhere to the following guidelines:",
+          "list": "[ \"Provide accurate and up-to-date information in your profile\", \"Communicate respectfully and professionally with other users\", \"Honor your commitments and deliver high-quality work\", \"Respect the intellectual property rights of others\", \"Maintain the confidentiality of sensitive information\", \"Comply with all applicable laws and regulations\", \"Report any suspicious or inappropriate behavior to the platform\"]",
+          "disclaimer": "Brikool is not responsible for the actions or conduct of its users. We encourage you to use caution and common sense when interacting with others on the platform."
+        }
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": {
+          "description": "Brikool respects the intellectual property rights of others and expects its users to do the same. By using the platform, you agree to the following terms:",
+          "list": "[ \"You retain ownership of the content you create and post on Brikool\", \"You grant Brikool a non-exclusive, royalty-free license to use, reproduce, and distribute your content\", \"You may not use the intellectual property of others without their permission\", \"You may not post copyrighted material without the proper authorization\", \"You may not infringe on the trademarks or patents of others\"]",
+          "consequences": "Users who violate these guidelines may be subject to account suspension or termination. . We take reports of misconduct seriously and will investigate all cases thoroughly"
+        }
+      },
+      "disclaimer": {
+        "title": "Disclaimer",
+        "content": {
+          "description": "Brikool is a platform that connects clients with freelancers. While we strive to provide a positive experience for all users, we cannot guarantee the quality or accuracy of the services provided. By using Brikool, you acknowledge and agree to the following terms:",
+          "list":"[ \"Brikool is not responsible for the actions or conduct of its users\", \"Brikool does not endorse or guarantee the quality of any services provided\", \"Brikool is not liable for any damages or losses resulting from the use of the platform\", \"Brikool is not responsible for the accuracy or completeness of user-generated content\", \"Brikool is not responsible for any disputes or disagreements between users\" ]",
+          "disclaimer": "Brikool is not responsible for the actions or conduct of its users. We encourage you to use caution and common sense when interacting with others on the platform."
+        }
+      },
+      "privacyPolicy": {
+        "title": "Privacy Policy",
+        "content": {
+          "description": "Brikool is committed to protecting your privacy and personal information. By using the platform, you agree to the following terms:",
+          "list": "[ \"Brikool collects and stores personal information to provide its services\", \"Brikool may share your information with third parties to facilitate transactions\", \"Brikool uses cookies and other tracking technologies to improve the user experience\", \"Brikool may collect and analyze data to improve its services and marketing efforts\", \"Brikool takes reasonable measures to protect your information from unauthorized access\" ]",
+          "consequences": "Users who violate these guidelines may be subject to account suspension or termination. . We take reports of misconduct seriously and will investigate all cases thoroughly"
+        }
+      },
+      "changesToTerms": {
+        "title": "Changes to Terms",
+        "content": {
+          "description": "Brikool reserves the right to update or modify these terms and conditions at any time. By continuing to use the platform, you agree to be bound by the revised terms. We encourage you to review the terms periodically to stay informed of any changes."
+        }
+      },
+      "freeOfCharge": {
+        "title": "Free of Charge",
+        "content": {
+          "description": "Brikool is a free platform for both clients and freelancers. We do not charge any fees for using the platform or creating an account. However, we may introduce premium features or services in the future that require payment. We will notify users in advance of any changes to the pricing structure."
+        }
+      },
+      "contactUs": {
+        "title": "Contact Us",
+        "content": {
+          "description": "If you have any questions or concerns about these terms and conditions, please contact us at",
+          "email": "support@brikool-inc.com"
+        }
+      }
+    }
+  }
+}

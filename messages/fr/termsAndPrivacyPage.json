@@ -1,0 +1,72 @@
+{
+  "TermsAndPrivacyPage": {
+    "title": "Conditions générales et confidentialité",
+    "clause": {
+      "introduction": {
+        "title": "Introduction",
+        "content": {
+          "description": "Bienvenue sur Brikool, une plateforme locale de freelancing conçue pour connecter les clients avec des freelances talentueux. En accédant ou en utilisant Brikool, vous acceptez de respecter les termes et conditions suivants. Veuillez les lire attentivement car ils contiennent des informations importantes sur vos droits et obligations."
+        }
+      },
+      "userConduct": {
+        "title": "Comportement de l'utilisateur",
+        "content": {
+          "description": "Nous nous engageons à maintenir une communauté sûre et respectueuse. Les activités suivantes sont strictement interdites sur Brikool :",
+          "list": "[\"Publier du contenu faux, trompeur ou diffamatoire\", \"Harceler, menacer ou discriminer d'autres utilisateurs\",\"Enfreindre les droits de propriété intellectuelle d'autrui\", \"Participer à des activités frauduleuses ou illégales\",\"Tenter d'accéder ou d'interférer avec les systèmes de la plateforme\",\"Utiliser la plateforme pour promouvoir ou distribuer des logiciels malveillants\",\"Violer toute loi ou réglementation applicable\",\"Publier du contenu obscène, offensant ou diffamatoire\",\"Participer à des discours de haine, du racisme ou des comportements discriminatoires\",\"S'engager dans toute autre activité pouvant nuire à la plateforme ou à ses utilisateurs\"]",
+          "consequences": "Les utilisateurs qui enfreignent ces directives peuvent être suspendus ou leur compte peut être résilié. Nous prenons les signalements de mauvaise conduite au sérieux et enquêterons minutieusement sur chaque cas."
+        }
+      },
+      "userResponsibilities": {
+        "title": "Responsabilités de l'utilisateur",
+        "content": {
+          "description": "Pour garantir une expérience positive pour tous les utilisateurs, nous vous demandons de respecter les directives suivantes :",
+          "list": "[\"Fournir des informations exactes et à jour dans votre profil\", \"Communiquer avec respect et professionnalisme avec les autres utilisateurs\", \"Honorer vos engagements et fournir un travail de qualité\", \"Respecter les droits de propriété intellectuelle d'autrui\", \"Maintenir la confidentialité des informations sensibles\", \"Respecter toutes les lois et réglementations applicables\", \"Signaler tout comportement suspect ou inapproprié à la plateforme\"]",
+          "disclaimer": "Brikool n'est pas responsable des actions ou du comportement de ses utilisateurs. Nous vous encourageons à faire preuve de prudence et de bon sens lors de vos interactions avec les autres sur la plateforme."
+        }
+      },
+      "intellectualProperty": {
+        "title": "Propriété intellectuelle",
+        "content": {
+          "description": "Brikool respecte les droits de propriété intellectuelle d'autrui et s'attend à ce que ses utilisateurs fassent de même. En utilisant la plateforme, vous acceptez les termes suivants :",
+          "list": "[\"Vous conservez la propriété du contenu que vous créez et publiez sur Brikool\", \"Vous accordez à Brikool une licence non exclusive et sans redevance pour utiliser, reproduire et distribuer votre contenu\", \"Vous ne pouvez pas utiliser la propriété intellectuelle d'autrui sans leur permission\", \"Vous ne pouvez pas publier de matériel protégé par le droit d'auteur sans autorisation appropriée\", \"Vous ne pouvez pas enfreindre les marques ou les brevets d'autrui\"]",
+          "consequences": "Les utilisateurs qui enfreignent ces directives peuvent être suspendus ou leur compte peut être résilié. Nous prenons les signalements de mauvaise conduite au sérieux et enquêterons minutieusement sur chaque cas."
+        }
+      },
+      "disclaimer": {
+        "title": "Clause de non-responsabilité",
+        "content": {
+          "description": "Brikool est une plateforme qui connecte les clients aux freelances. Bien que nous nous efforcions de fournir une expérience positive pour tous les utilisateurs, nous ne pouvons pas garantir la qualité ou l'exactitude des services fournis. En utilisant Brikool, vous reconnaissez et acceptez les termes suivants :",
+          "list": "[\"Brikool n'est pas responsable des actions ou du comportement de ses utilisateurs\", \"Brikool ne cautionne ni ne garantit la qualité des services fournis\", \"Brikool n'est pas responsable des dommages ou pertes résultant de l'utilisation de la plateforme\", \"Brikool n'est pas responsable de l'exactitude ou de l'exhaustivité du contenu généré par les utilisateurs\", \"Brikool n'est pas responsable des litiges ou désaccords entre utilisateurs\"]",
+          "disclaimer": "Brikool n'est pas responsable des actions ou du comportement de ses utilisateurs. Nous vous encourageons à faire preuve de prudence et de bon sens lors de vos interactions avec les autres sur la plateforme."
+        }
+      },
+      "privacyPolicy": {
+        "title": "Politique de confidentialité",
+        "content": {
+          "description": "Brikool s'engage à protéger votre vie privée et vos informations personnelles. En utilisant la plateforme, vous acceptez les termes suivants :",
+          "list": "[\"Brikool collecte et stocke des informations personnelles pour fournir ses services\", \"Brikool peut partager vos informations avec des tiers pour faciliter les transactions\", \"Brikool utilise des cookies et d'autres technologies de suivi pour améliorer l'expérience utilisateur\", \"Brikool peut collecter et analyser des données pour améliorer ses services et ses efforts marketing\", \"Brikool prend des mesures raisonnables pour protéger vos informations contre tout accès non autorisé\"]",
+          "consequences": "Les utilisateurs qui enfreignent ces directives peuvent être suspendus ou leur compte peut être résilié. Nous prenons les signalements de mauvaise conduite au sérieux et enquêterons minutieusement sur chaque cas."
+        }
+      },
+      "changesToTerms": {
+        "title": "Changements aux conditions générales",
+        "content": {
+          "description": "Brikool se réserve le droit de mettre à jour ou de modifier ces termes et conditions à tout moment. En continuant à utiliser la plateforme, vous acceptez d'être lié par les termes révisés. Nous vous encourageons à consulter les termes périodiquement pour rester informé de tout changement."
+        }
+      },
+      "freeOfCharge": {
+        "title": "Gratuit",
+        "content": {
+          "description": "Brikool est une plateforme gratuite pour les clients et les freelances. Nous ne facturons aucun frais pour l'utilisation de la plateforme ou la création d'un compte. Cependant, nous pourrions introduire des fonctionnalités ou des services premium à l'avenir nécessitant un paiement. Nous informerons les utilisateurs à l'avance de tout changement dans la structure tarifaire."
+        }
+      },
+      "contactUs": {
+        "title": "Contactez-nous",
+        "content": {
+          "description": "Si vous avez des questions ou des préoccupations concernant ces termes et conditions, veuillez nous contacter à",
+          "email": "support@brikool-inc.com"
+        }
+      }
+    }
+  }
+}

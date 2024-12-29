@@ -40,7 +40,7 @@ const signInRequestSchema = z.object({
 })
 
 const forgotPasswordSchema = z.object({
-    email: z.string().email()
+    email: z.string().min(1, {message: "required"}).email({message: "invalid"})
 })
 
 const resetPasswordSchema = z.object({
