@@ -2,11 +2,12 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 import Image from "next/image";
 import SidebarItem from "@/components/Sidebar/SidebarItem";
 import ClickOutside from "@/components/ClickOutside";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import {getTranslations} from "next-intl/server";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -42,7 +43,7 @@ const menuGroups = [
           </svg>
         ),
         label: "Profile",
-        route: "/fr/dashboard",
+        route: "/dashboard/freelancer",
       },
       {
         icon: (
@@ -69,7 +70,7 @@ const menuGroups = [
             </svg>
         ),
         label: "Parametres",
-        route: "/fr/dashboard/pages/settings",
+        route: "/dashboard/freelancer/pages/settings", //NEED TO BE CHANGED AFTER ROLE SET
       },
       {
         icon: (
@@ -92,16 +93,14 @@ const menuGroups = [
         label: "Annonces",
         route: "#",
         children: [
-          { label: "Ajouter Annonces", route: "/fr/dashboard/forms/form-elements" },
-          { label: "Liste des Annonces", route: "/forms/form-layout" },
+          { label: "Ajouter Annonces", route: "/dashboard/freelancer/forms/form-elements" },
+          { label: "Liste des Annonces", route: "/dashboard/freelancer/pages/myServices" },
         ],      },
     ],
   },
 ];
-
 const Sidebar = ({sidebarOpen, setSidebarOpen}: SidebarProps) => {
   const pathname = usePathname();
-
   const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
 
   return (
@@ -115,7 +114,7 @@ const Sidebar = ({sidebarOpen, setSidebarOpen}: SidebarProps) => {
         >
           {/* <!-- SIDEBAR HEADER --> */}
           <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5 xl:py-10">
-            <Link href="/">
+            <Link href="/profile">
               <Image
                   width={176}
                   height={32}

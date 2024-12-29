@@ -32,7 +32,7 @@ docker run -p 3000:3000 ghcr.io/codeonym/brikool-app-frontend:latest
 - #### Notice
 To load the environment variables from the `.env.local` file, you need to add the following option to the `docker run` command:
 ```bash
-sudo docker run -p 3000:3000 --env-file .env.local ghcr.io/codeonym/brikool-app-frontend:latest  
+sudo docker run -p 3000:3000 --env-file ..env.local ghcr.io/codeonym/brikool-app-frontend:latest  
 ```
 
 You can access the application using the following URL:

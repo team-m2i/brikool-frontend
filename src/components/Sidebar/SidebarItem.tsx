@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 import SidebarDropdown from "@/components/Sidebar/SidebarDropdown";
 
 const SidebarItem = ({ item, pageName, setPageName }: any) => {
