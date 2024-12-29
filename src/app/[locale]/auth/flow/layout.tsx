@@ -8,7 +8,7 @@ async function Layout({children}: { children: ReactNode }) {
     const session = await auth()
     const locale = await getLocale();
     if(session?.user){
-        redirect({href:authFlowNavLinks.profile.href, locale})
+        redirect({href:authFlowNavLinks.postSignIn.href, locale})
     }
     return (
         <>

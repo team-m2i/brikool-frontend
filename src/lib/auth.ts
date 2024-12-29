@@ -74,7 +74,7 @@ export const authOptions: NextAuthConfig = {
     callbacks: {
         authorized({ request, auth }) {
             const { pathname } = request.nextUrl;
-            if (pathname.includes("/profile")) return !!auth;
+            if (pathname.includes("/dashboard")) return !!auth;
             return true;
         },
         jwt({ token, user }) {

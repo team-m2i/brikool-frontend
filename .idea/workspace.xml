@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/pages-accessibility-with-locales.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/test-public-pages-accessibility-with-locales.cy.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/config/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/config/forgot-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/flow/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/flow/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/profile/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/navigation/auth-flow-navlinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/navigation/auth-flow-navlinks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +26,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -77,8 +85,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/add-cypress-e2e",
-    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/messages/ar",
+    "git-widget-placeholder": "feature/add-tests-and-optimizations",
+    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/cypress/e2e",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,6 +99,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cypress/e2e" />
       <recent name="$PROJECT_DIR$/messages/ar" />
       <recent name="$PROJECT_DIR$/messages/fr" />
       <recent name="$PROJECT_DIR$/messages/en" />
@@ -103,6 +112,26 @@
       <recent name="$PROJECT_DIR$/src/config/routes/RBAC" />
       <recent name="$PROJECT_DIR$/src/app/[locale]/auth/new" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="all tests in firstTest.cy.ts" type="JavaScriptTestRunnerCypress" temporary="true">
+      <node-interpreter value="project" />
+      <cypress-package value="$PROJECT_DIR$/node_modules/cypress" />
+      <working-dir value="$PROJECT_DIR$" />
+      <cypress-options value="-q" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/cypress/e2e/firstTest.cy.ts" />
+      <test-names>
+        <test-name value="template spec" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cypress.all tests in firstTest.cy.ts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -142,6 +171,9 @@
       <workItem from="1734539759303" duration="305000" />
       <workItem from="1734540102387" duration="345000" />
       <workItem from="1734812459673" duration="6625000" />
+      <workItem from="1735395485546" duration="5000" />
+      <workItem from="1735411455728" duration="772000" />
+      <workItem from="1735417418842" duration="13473000" />
     </task>
     <servers />
   </component>
