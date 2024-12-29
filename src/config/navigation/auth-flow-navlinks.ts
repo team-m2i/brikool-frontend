@@ -3,6 +3,10 @@ export const authFlowNavLinks = {
         title: "Login",
         href: "/auth/flow/login"
     },
+    postSignIn: {
+        title: "Post Sign In",
+        href: "/"
+    },
     signUp: {
         title: "Register",
         href: "/auth/flow/register"

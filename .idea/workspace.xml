@@ -5,13 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/common/auth-flow-actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/common/auth-flow-actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-access/auth-flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-access/auth-flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/definitions/models/auth-flow-model-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/models/auth-flow-model-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/DOCKER_INSTRUCTIONS.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/DOCKER_INSTRUCTIONS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cover/cover-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/cover/cover-02.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/cover/cover-03.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/cover/cover-03.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/dashboard/@admin/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/dashboard/@freelancer/forms/form-elements/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/dashboard/@freelancer/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/dashboard/@freelancer/pages/settings/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/dashboard/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/dashboard/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxFive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxFive.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxFour.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxFour.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxOne.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxThree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxThree.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Checkboxes/CheckboxTwo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/DatePicker/DatePickerOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/DatePicker/DatePickerOne.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/DatePicker/DatePickerTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/DatePicker/DatePickerTwo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/InputGroup/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/InputGroup/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/MultiSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/MultiSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupOne.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupThree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupThree.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/SelectGroup/SelectGroupTwo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherFour.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherFour.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherOne.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherOne.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherThree.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherThree.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherTwo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/Switchers/SwitcherTwo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormElements/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormElements/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/DarkModeSwitcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/DarkModeSwitcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/DropdownUser.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/DropdownUser.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileBox/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileBox/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SettingBoxes/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SettingBoxes/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/SidebarItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/SidebarItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/test-next-intl-i18n.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/test-next-intl-i18n.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/terms-and-privacy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/terms-and-privacy/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +54,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -81,22 +113,38 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/reset-password&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/messages/ar&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/asus/Desktop/final&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\asus\\Desktop\\final\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/add-tests-and-optimizations",
+    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/messages/fr",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\asus\Desktop\final" />
       <recent name="$PROJECT_DIR$/messages/ar" />
       <recent name="$PROJECT_DIR$/messages/fr" />
+      <recent name="$PROJECT_DIR$/messages/ar" />
+      <recent name="$PROJECT_DIR$/cypress/e2e" />
       <recent name="$PROJECT_DIR$/messages/en" />
       <recent name="$PROJECT_DIR$/src/raw" />
     </key>
@@ -107,6 +155,26 @@
       <recent name="$PROJECT_DIR$/src/config/routes/RBAC" />
       <recent name="$PROJECT_DIR$/src/app/[locale]/auth/new" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="all tests in firstTest.cy.ts" type="JavaScriptTestRunnerCypress" temporary="true">
+      <node-interpreter value="project" />
+      <cypress-package value="$PROJECT_DIR$/node_modules/cypress" />
+      <working-dir value="$PROJECT_DIR$" />
+      <cypress-options value="-q" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/cypress/e2e/firstTest.cy.ts" />
+      <test-names>
+        <test-name value="template spec" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cypress.all tests in firstTest.cy.ts" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -143,6 +211,14 @@
       <workItem from="1733689705021" duration="1180000" />
       <workItem from="1733753952467" duration="29675000" />
       <workItem from="1734111498713" duration="11134000" />
+      <workItem from="1734539759303" duration="305000" />
+      <workItem from="1734540102387" duration="345000" />
+      <workItem from="1734812459673" duration="6625000" />
+      <workItem from="1735441087831" duration="1582000" />
+      <workItem from="1735444881495" duration="377000" />
+      <workItem from="1735395485546" duration="5000" />
+      <workItem from="1735411455728" duration="772000" />
+      <workItem from="1735417418842" duration="19437000" />
     </task>
     <servers />
   </component>
