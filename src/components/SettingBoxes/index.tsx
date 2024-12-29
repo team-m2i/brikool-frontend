@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { TFreelancerModel } from "@/definitions/models/freelancer-model-schema";
 import { handleUpdateFreelancerActions } from "@/actions/freelancer/freelancerActions";
 import { freelancerSchema } from "@/definitions/schema/freelancer-schema"; // Zod schema for validation
+import regionsData from "@/raw/regions.json";
+import citiesData from "@/raw/cities.json";
 
 interface SettingBoxesProps {
   freelancer: TFreelancerModel;
@@ -17,33 +19,38 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  // Check if the formData is different from the initial freelancer data
+  // Filtered cities based on selected region
+  const [filteredCities, setFilteredCities] = useState(
+      citiesData.filter((city) => city.region_id === parseInt(freelancer.region))
+  );
+
   useEffect(() => {
     const isDifferent = JSON.stringify(formData) !== JSON.stringify(freelancer);
     setIsModified(isDifferent);
   }, [formData, freelancer]);
 
+  // Update filtered cities when region changes
+  useEffect(() => {
+    const updatedCities = citiesData.filter(
+        (city) => city.region_id === parseInt(formData.region)
+    );
+    setFilteredCities(updatedCities);
+
+    // Reset city if no longer valid
+    if (!updatedCities.find((city) => city.id === formData.city)) {
+      setFormData((prev) => ({ ...prev, city: "" }));
+    }
+  }, [formData.region]);
+
   const validateField = (name: keyof TFreelancerModel, value: any) => {
     try {
-      // Check for special characters (example: no special characters except spaces, letters, and numbers)
-      const specialCharRegex = /^[a-zA-Z0-9\s]*$/;
-
-      if (["nickName", "region", "city", "address", "description"].includes(name)) {
-        if (!specialCharRegex.test(value)) {
-          throw new Error("Special characters are not allowed.");
-        }
-      }
-
-      // Validate the specific field using `.shape` for the field schema
       freelancerSchema.shape[name].parse(value);
 
-      // Clear the error for the field if validation passes
       setErrors((prev) => ({
         ...prev,
         [name]: null,
       }));
     } catch (error: any) {
-      // Set the error message for the field if validation fails
       setErrors((prev) => ({
         ...prev,
         [name]: error.message || "Invalid value",
@@ -51,19 +58,18 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
     }
   };
 
-
   const handleInputChange = (
-      e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+      e: React.ChangeEvent<
+          HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
   ) => {
     const { name, value } = e.target;
 
-    // Update form data
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
 
-    // Validate the field
     validateField(name as keyof TFreelancerModel, value);
   };
 
@@ -98,21 +104,15 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
         }
       });
 
-      console.log("Payload being sent:", formDataObject);
-
       const result = await handleUpdateFreelancerActions(formDataObject);
 
       if (result.status === "success") {
         setSuccess(true);
         setErrors({});
-      } else if (result.status === "forbidden") {
-        console.warn("Received 403 Forbidden, but changes might be applied.");
-        setSuccess(true);
       } else {
         setError(result.message || "Failed to update freelancer.");
       }
     } catch (err: any) {
-      console.error("Error updating freelancer:", err);
       setError(err.message || "Failed to save changes.");
     } finally {
       setSaving(false);
@@ -130,7 +130,7 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
             </div>
             <div className="p-7">
               <form onSubmit={(e) => e.preventDefault()}>
-                {/* Phone Number */}
+                {/* Phone Number and Nickname */}
                 <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                   <div className="w-full sm:w-1/2">
                     <label
@@ -140,16 +140,15 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       Phone Number
                     </label>
                     <input
-                        className={`w-full rounded-[7px] border-[1.5px] text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.phoneNumber
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
                         id="phoneNumber"
                         name="phoneNumber"
                         value={formData.phoneNumber || ""}
                         onChange={handleInputChange}
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.phoneNumber
+                                ? "border-red-500"
+                                : "border-stroke focus:border-primary"
+                        }`}
                     />
                     {errors.phoneNumber && (
                         <p className="mt-2 text-red-500 text-sm">
@@ -165,16 +164,15 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       Username
                     </label>
                     <input
-                        className={`w-full rounded-[7px] border-[1.5px] text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.nickName
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
                         id="nickName"
                         name="nickName"
                         value={formData.nickName || ""}
                         onChange={handleInputChange}
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.nickName
+                                ? "border-red-500"
+                                : "border-stroke focus:border-primary"
+                        }`}
                     />
                     {errors.nickName && (
                         <p className="mt-2 text-red-500 text-sm">
@@ -183,6 +181,7 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     )}
                   </div>
                 </div>
+
                 {/* Region and City */}
                 <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                   <div className="w-full sm:w-1/2">
@@ -192,18 +191,26 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     >
                       Region
                     </label>
-                    <input
-                        className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.region
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
+                    <select
                         id="region"
                         name="region"
                         value={formData.region || ""}
                         onChange={handleInputChange}
-                    />
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.region
+                                ? "border-red-500"
+                                : "border-stroke focus:border-primary"
+                        }`}
+                    >
+                      <option value="" disabled>
+                        Select a region
+                      </option>
+                      {regionsData.map((region) => (
+                          <option key={region.id} value={region.id}>
+                            {region.names.en}
+                          </option>
+                      ))}
+                    </select>
                     {errors.region && (
                         <p className="mt-2 text-red-500 text-sm">{errors.region}</p>
                     )}
@@ -215,23 +222,32 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     >
                       City
                     </label>
-                    <input
-                        className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.city
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
+                    <select
                         id="city"
                         name="city"
                         value={formData.city || ""}
                         onChange={handleInputChange}
-                    />
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.city
+                                ? "border-red-500"
+                                : "border-stroke focus:border-primary"
+                        }`}
+                    >
+                      <option value="" disabled>
+                        Select a city
+                      </option>
+                      {filteredCities.map((city) => (
+                          <option key={city.id} value={city.id}>
+                            {city.names.en}
+                          </option>
+                      ))}
+                    </select>
                     {errors.city && (
                         <p className="mt-2 text-red-500 text-sm">{errors.city}</p>
                     )}
                   </div>
                 </div>
+
                 {/* Address and ZIP */}
                 <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                   <div className="w-full sm:w-1/2">
@@ -242,16 +258,15 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       Address
                     </label>
                     <input
-                        className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.address
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
                         id="address"
                         name="address"
                         value={formData.address || ""}
                         onChange={handleInputChange}
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.address
+                                ? "border-red-500"
+                                : "border-stroke focus:border-primary"
+                        }`}
                     />
                     {errors.address && (
                         <p className="mt-2 text-red-500 text-sm">
@@ -267,22 +282,20 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       ZIP Code
                     </label>
                     <input
-                        className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
-                            errors.zip
-                                ? "border-red-500"
-                                : "border-stroke focus:border-primary"
-                        }`}
-                        type="text"
                         id="zip"
                         name="zip"
                         value={formData.zip || ""}
                         onChange={handleInputChange}
+                        className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                            errors.zip ? "border-red-500" : "border-stroke focus:border-primary"
+                        }`}
                     />
                     {errors.zip && (
                         <p className="mt-2 text-red-500 text-sm">{errors.zip}</p>
                     )}
                   </div>
                 </div>
+
                 {/* Email */}
                 <div className="mb-5.5">
                   <label
@@ -292,16 +305,15 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     Email Address
                   </label>
                   <input
-                      className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
-                          errors.publicEmail
-                              ? "border-red-500"
-                              : "border-stroke focus:border-primary"
-                      }`}
-                      type="email"
                       id="publicEmail"
                       name="publicEmail"
                       value={formData.publicEmail || ""}
                       onChange={handleInputChange}
+                      className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
+                          errors.publicEmail
+                              ? "border-red-500"
+                              : "border-stroke focus:border-primary"
+                      }`}
                   />
                   {errors.publicEmail && (
                       <p className="mt-2 text-red-500 text-sm">
@@ -309,6 +321,7 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       </p>
                   )}
                 </div>
+
                 {/* Description */}
                 <div className="mb-5.5">
                   <label
@@ -321,13 +334,13 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       id="description"
                       name="description"
                       rows={6}
-                      className={`w-full rounded-[7px] border-[1.5px]  text-white py-2.5 px-4 focus-visible:outline-none ${
+                      value={formData.description || ""}
+                      onChange={handleInputChange}
+                      className={`w-full rounded-[7px] border-[1.5px] py-2.5 px-4 ${
                           errors.description
                               ? "border-red-500"
                               : "border-stroke focus:border-primary"
                       }`}
-                      value={formData.description || ""}
-                      onChange={handleInputChange}
                   ></textarea>
                   {errors.description && (
                       <p className="mt-2 text-red-500 text-sm">
@@ -335,10 +348,12 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       </p>
                   )}
                 </div>
+
+                {/* Save and Cancel Buttons */}
                 <div className="flex justify-end gap-3">
                   <button
                       type="button"
-                      className="flex justify-center rounded-[7px] border border-stroke px-6 py-[7px] font-medium text-dark hover:shadow-1 dark:border-dark-3 dark:text-white"
+                      className="rounded-[7px] border px-6 py-[7px] font-medium text-dark hover:shadow-1 dark:border-dark-3 dark:text-white"
                       onClick={handleCancel}
                   >
                     Cancel
@@ -347,7 +362,7 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       type="button"
                       onClick={handleSave}
                       disabled={!isModified || saving}
-                      className={`flex justify-center rounded-[7px] px-6 py-[7px] font-medium text-white ${
+                      className={`rounded-[7px] px-6 py-[7px] font-medium text-white ${
                           saving || !isModified
                               ? "bg-gray-500 cursor-not-allowed"
                               : "bg-primary hover:bg-opacity-90"
