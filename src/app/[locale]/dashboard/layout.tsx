@@ -1,13 +1,13 @@
-import React, {Suspense, ReactNode} from 'react'
-type TRole = 'admin' | 'freelancer'
-const ROLE: TRole = 'freelancer'
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import React, { Suspense, ReactNode } from 'react';
+import DefaultLayout from "@/components/Layouts/DefaultLaout";
+export default function Layout({children}: {children: ReactNode})
+{
 
-export default function Layout({admin, freelancer}: {admin: ReactNode, freelancer: ReactNode}) {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
-            {ROLE === 'admin' ? admin : freelancer}
-        </Suspense>
+        <DefaultLayout>
+            <Suspense fallback={<div>Loading...</div>}>
+            </Suspense>
+            {children}
+        </DefaultLayout>
     );
 }
