@@ -22,6 +22,7 @@ export default getRequestConfig(async ({requestLocale}) => {
             ...(await import(`../../messages/${locale}/resetPasswordPage.json`)).default,
             ...(await import(`../../messages/${locale}/confirmEmailPage.json`)).default,
             ...(await import(`../../messages/${locale}/infoPage.json`)).default,
+            ...(await import(`../../messages/${locale}/termsAndPrivacyPage.json`)).default,
     },
     };
 });
