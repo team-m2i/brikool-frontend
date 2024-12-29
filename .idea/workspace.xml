@@ -6,15 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="42f2e279-16df-42c8-b639-856973e81a4b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/e2e/pages-accessibility-with-locales.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/test-public-pages-accessibility-with-locales.cy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/config/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/config/forgot-password/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/flow/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/flow/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/profile/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/toast.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/navigation/auth-flow-navlinks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/navigation/auth-flow-navlinks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/schema/auth-flow-schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cypress/e2e/test-next-intl-i18n.cy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/e2e/test-next-intl-i18n.cy.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/terms-and-privacy/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/terms-and-privacy/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +80,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature/add-tests-and-optimizations",
-    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/cypress/e2e",
+    "last_opened_file_path": "/home/codeonym/WebstormProjects/brikool-frontend/messages/fr",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,9 +93,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/cypress/e2e" />
-      <recent name="$PROJECT_DIR$/messages/ar" />
       <recent name="$PROJECT_DIR$/messages/fr" />
+      <recent name="$PROJECT_DIR$/messages/ar" />
+      <recent name="$PROJECT_DIR$/cypress/e2e" />
       <recent name="$PROJECT_DIR$/messages/en" />
       <recent name="$PROJECT_DIR$/src/raw" />
     </key>
@@ -173,7 +167,7 @@
       <workItem from="1734812459673" duration="6625000" />
       <workItem from="1735395485546" duration="5000" />
       <workItem from="1735411455728" duration="772000" />
-      <workItem from="1735417418842" duration="13473000" />
+      <workItem from="1735417418842" duration="19437000" />
     </task>
     <servers />
   </component>

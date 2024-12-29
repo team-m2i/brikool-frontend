@@ -41,10 +41,15 @@ describe("", () => {
         cy.contains("هل نسيت كلمة المرور؟")
     })
     it("passes", () => {
-        // TODO: Add i18n support for these pages
+
         cy.visit("/en/terms-and-privacy")
+        cy.contains("Terms and Privacy")
+
         cy.visit("/fr/terms-and-privacy")
+        cy.contains("Conditions générales et confidentialité")
+
         cy.visit("/ar/terms-and-privacy")
+        cy.contains("الشروط والخصوصية")
     })
     it("passes", () => {
         cy.visit("/en/error")
