@@ -1,26 +1,15 @@
-// TODO: Please add the UI + Code To get the public profile of the freelancers - Portfolio
 
-//  this code was just to set ou on the trail
-type Freelancer = {
-    id : number,
-    name: string,
-    title: string,
-    description: string,
-    avatar: string
-}
-const getFreelancerById = async(id: number) => ({
-    id: id,
-    name: 'John Doe',
-    title: 'Full Stack Developer',
-    description: 'John is a full stack developer with 10 years of experience',
-    avatar: 'https://randomuser.me/api/portraits'
-})
+import {fetchFreelancerById} from "@/data-access/freelancer";
+import ProfileBox from "@/components/ProfileBox";
+import React from "react";
+
 
 async function Page({params: {freelancerId}}: {params: {freelancerId: string }}) {
-    const freelancer = await getFreelancerById(+freelancerId);
+
+    const freelancer = await fetchFreelancerById(+freelancerId);
     return (
-        <div>
-            {JSON.stringify(freelancer)}
+        <div className="mx-auto w-full mt-10 max-w-[970px]">
+            <ProfileBox freelancer={freelancer} canEditCover={false}/>
         </div>
     );
 }

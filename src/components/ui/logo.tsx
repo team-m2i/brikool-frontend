@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useTheme} from "next-themes"
 import {BASE_LOGO_URL} from "@/lib/constants";
+import {Link} from "@/i18n/routing";
 
 const Base_logo_short_url =  BASE_LOGO_URL + "-short";
 const logo_path = {
@@ -27,7 +28,7 @@ const Logo = (
 
     const {theme} = useTheme()
     return (
-        <>
+        <Link className={"cursor-pointer"} href={"/"}>
             {
                 theme === "dark"
                     ? <Image
@@ -41,7 +42,7 @@ const Logo = (
                         width={width ?? 60}
                         height={height ?? 60}/>
             }
-        </>
+        </Link>
     );
 }
 
