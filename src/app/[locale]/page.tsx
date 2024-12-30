@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button"
 import React from 'react'
 import HomeHeader from "@/components/HomeHeader/header"
@@ -61,7 +60,9 @@ export default function HomePage({params: {locale}}: {params: { locale: string }
                     <p className="text-sm sm:text-lg">
                     {t('services.subtitle')}
                     </p>
-                    <div className="pt-2" style={{ direction: locale === "ar" ? "rtl" : "ltr" }}>
+                    <div className="pt-2" 
+                    // style={{ direction: locale === "ar" ? "rtl" : "ltr" }}
+                    >
                     <Button variant="default" className="border-none">
                         <Link href={`/${authFlowNavLinks.signUp.href}`} className="text-sm text-white">
                         {t('buttons.getstarted')}
