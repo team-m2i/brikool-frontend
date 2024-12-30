@@ -1,8 +1,9 @@
+import React from 'react';
 
-function Page() {
+async function Page() {
     return (
         <div>
-            all announces
+            all announce
         </div>
     );
 }
