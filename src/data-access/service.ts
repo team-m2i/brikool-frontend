@@ -70,3 +70,31 @@ export const deleteService = async (id: number): Promise<{ message: string }> =>
         throw error;
     }
 };
+
+export const fetchAllServices = async (): Promise<TServiceModel[]> => {
+    try {
+        // Construct the API endpoint URL
+        const url = `http://localhost:8080/api/freelancer/service/all}`;
+
+        // Make the GET request to the server
+        const response = await withAuth(url, {
+            method: "GET",
+        });
+
+        // Check if the response is successful
+        if (!response.ok) {
+            throw new Error(
+                `Error fetching services : ${response.statusText}`
+            );
+        }
+
+        // Parse the JSON response
+        const data = await response.json();
+
+        // Typecast and return the list of services
+        return data as TServiceModel[];
+    } catch (error) {
+        console.error("Failed to fetch services by freelancer ID:", error);
+        throw error;
+    }
+}

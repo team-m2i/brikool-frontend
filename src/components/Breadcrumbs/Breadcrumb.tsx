@@ -1,4 +1,4 @@
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 
 interface BreadcrumbProps {
   pageName: string;
@@ -14,7 +14,7 @@ const Breadcrumb = ({ pageName }: BreadcrumbProps) => {
       <nav>
         <ol className="flex items-center gap-2">
           <li>
-            <Link className="font-medium" href="/fr/dashboard">
+            <Link className="font-medium" href="/dashboard/freelancer">
               Dashboard /
             </Link>
           </li>
