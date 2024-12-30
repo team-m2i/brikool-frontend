@@ -10,7 +10,7 @@ export const freelancerSchema = z.object({
     ).default("N/A"), // Default to "N/A" if invalid
     region: z.string().min(1, "Region is required").default("Unknown"),
     city: z.string().min(1, "City is required").default("Unknown"),
-    zip: z.string().regex(/^\d{5}$/, "ZIP code must be a valid 5-digit number").default("00000"),
+    zip: z.string().default("00000"),
     address: z.string().min(1, "Address is required").default("No Address Provided"),
     publicEmail: z.string().email("Public Email must be valid").default("unknown@example.com"),
 });

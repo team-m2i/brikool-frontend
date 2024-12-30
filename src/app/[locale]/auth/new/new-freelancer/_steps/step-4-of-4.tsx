@@ -27,7 +27,7 @@ function Step4({toggleNav, showToastMessage} : {toggleNav: (action: TNavToggle) 
                     await refreshUserSession()
                     // wait for 2s before redirecting
                     await new Promise(resolve => setTimeout(resolve, 2000))
-                    router.replace(authFlowNavLinks.profile.href)
+                    router.replace(authFlowNavLinks.postSignIn.href)
                 }
             }
         }catch (e){

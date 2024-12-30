@@ -53,7 +53,7 @@ export const authOptions: NextAuthConfig = {
 
                                     return {...data.user, jwt: data.jwt};
                                 } else {
-                                    console.error("Authorization failed:", data);
+                                    console.error("Authorization failed:", res.statusText);
                                 }
                             } else {
                                 console.error("Failed to sign in:", res.statusText);

@@ -21,20 +21,18 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { signOut } from "next-auth/react";
 
-export default function Navbar() {
+export default function Navbar({className}: {className: string}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const t = useTranslations('HomePage');
   const { data: session, status } = useSession() 
-
   const isLoading = status === 'loading'; // Check if the session is loading
 
   return (
     <>
       <nav 
         aria-label="Global" 
-        className="fixed inset-x-0 top-0 flex items-center justify-between p-3 lg:px-8 
-        bg-myColor4 bg-opacity-25 backdrop-blur-sm z-50 shadow-lg rounded-b-lg ">
+            className={cn("fixed inset-x-0 top-0 flex items-center justify-between p-3 lg:px-8 bg-myColor4 bg-opacity-25 backdrop-blur-sm z-50 shadow-lg rounded-b-lg ", className)}>
 
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
