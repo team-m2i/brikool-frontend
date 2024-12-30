@@ -6,17 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="109a1157-40e3-4aa5-a2e3-94da3cabb751" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/announces/Page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-4-of-4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/auth/new/new-freelancer/_steps/step-4-of-4.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/ar/homepage.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/ar/homepage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/en/homepage.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en/homepage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/fr/homepage.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/fr/homepage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeHeader/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeHeader/header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navbar/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data-access/auth-flow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data-access/auth-flow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/definitions/schema/freelancer-schema.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/definitions/schema/freelancer-schema.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/auth.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/constants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/constants.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/withAuth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/withAuth.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "feature/add-announces-pages",
+    "git-widget-placeholder": "hotfix/fix-nav-cn-import",
     "node.js.selected.package.tslint": "(autodetect)",
     "ts.external.directory.path": "/home/codeonym/WebstormProjects/brikool-frontend/node_modules/typescript/lib"
   }
