@@ -41,9 +41,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <div suppressHydrationWarning>
         <SessionProvider>
             <ThemeProvider attribute={"class"}>
-                {/* <NextIntlClientProvider messages={messages}> */}
+                 <NextIntlClientProvider messages={messages}>
                     {children}
-                {/* </NextIntlClientProvider> */}
+                 </NextIntlClientProvider>
             </ThemeProvider>
             <Toaster />
         </SessionProvider></div>

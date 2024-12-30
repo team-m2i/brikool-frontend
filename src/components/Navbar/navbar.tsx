@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Logo } from '../ui/logo'
 import { staticNavLinks } from '@/config/navigation/static-navlinks'
 import { authFlowNavLinks } from '@/config/navigation/auth-flow-navlinks'
@@ -20,12 +20,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { signOut } from "next-auth/react";
+import {cn} from "@/lib/utils";
 
-export default function Navbar({className}: {className: string}) {
+export default function Navbar({className}: {className?: string}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const t = useTranslations('HomePage');
-  const { data: session, status } = useSession() 
+  const { data: session, status } = useSession()
   const isLoading = status === 'loading'; // Check if the session is loading
 
   return (
@@ -36,7 +37,7 @@ export default function Navbar({className}: {className: string}) {
 
         <div className="flex lg:flex-1">
           <Link href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">Brikool</span>
             <Logo />
           </Link>
         </div>
@@ -45,12 +46,12 @@ export default function Navbar({className}: {className: string}) {
         {isLoading ? (
           <div className="flex gap-x-6 lg:flex-1 justify-center">
             {/* You can replace this with a loading skeleton or spinner */}
-            <span className="text-sm/6 font-semibold">Loading...</span>
+            <span className="text-sm/6 font-semibold">...</span>
           </div>
         ) : (
           session?.user ? (
             <>
-              <div className="flex hidden">
+              <div className="hidden">
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(true)}
@@ -61,7 +62,7 @@ export default function Navbar({className}: {className: string}) {
                 </button>
               </div>
 
-              <div className="navigation hidden lg:flex lg:gap-x-6 xl:gap-x-12">
+              <div className="navigation hidden lg:flex lg:gap-x-6 xl:gap-x-12 primary-text">
                 <Link
                   href="#"
                   className="text-sm/6 font-semibold transition-transform duration-200 hover:scale-110 hover:-translate-y-1"
@@ -104,8 +105,9 @@ export default function Navbar({className}: {className: string}) {
                     <Button variant="none">
                       <Avatar>
                         <AvatarImage src="https://github.com/shadcn.png" />
+                        <AvatarFallback>{session.user.name?.slice(0, 2)}</AvatarFallback>
                       </Avatar>
-                    </Button> 
+                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuLabel>{t("navigation.myaccount")}</DropdownMenuLabel>
@@ -123,7 +125,7 @@ export default function Navbar({className}: {className: string}) {
                       </Button>
                     </DropdownMenuItem>
                   </DropdownMenuContent>
-                </DropdownMenu> 
+                </DropdownMenu>
               </div>
             </>
           ) : (<>
@@ -179,7 +181,7 @@ export default function Navbar({className}: {className: string}) {
           <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full max-w-xs overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Brikool</span>
                 <Logo />
               </Link>
               <button
@@ -223,7 +225,7 @@ export default function Navbar({className}: {className: string}) {
                 <div className="py-6">
                   <Link
                     href={`/${authFlowNavLinks.singIn.href}`}
-                    className="block rounded-lg py-2.5 text-sm/6 font-semibold text-gray-900 
+                    className="block rounded-lg py-2.5 text-sm/6 font-semibold text-gray-900
                     transition-transform duration-200 hover:scale-110 hover:-translate-y-1 hover:text-myColor6"
                   >
                     {t("buttons.login")}

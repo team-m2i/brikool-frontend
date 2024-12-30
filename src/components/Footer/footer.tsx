@@ -5,6 +5,9 @@ import { useTranslations } from 'next-intl';
 import { Button } from '../ui/button';
 import AboutUs from '../AboutUs/AboutUs';
 import {Link} from "@/i18n/routing";
+import {Input} from "@/components/ui/input";
+import Image from "next/image";
+import {Mail, Phone} from "lucide-react";
 
 export default function Footer() {
     const t = useTranslations('HomePage');
@@ -14,37 +17,36 @@ export default function Footer() {
   return (
     <>
         <footer id="footer" className="bg-gray-200 text-gray-800 py-8 rounded-lg h-full">
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-6">
-              {/* Logo et Newsletter */}
-              <div className="items-center">
-                <h2 className="text-lg font-bold"><Logo /></h2>
-                <div className="mt-4">
-                  <h3 className="text-sm font-semibold">{t('footer.subscribenow')}</h3>
-                  <div className="flex mt-2 items-center justify-center">
-                    <div className="">
-                        <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        autoComplete="email"
-                        placeholder={t('footer.placeholder')}
-                        className="rounded border-0 py-1.5 bg-white shadow-sm text-black sm:text-sm/6 items"
-                        />
-                    </div>
-                    <Button
-                        variant="ghost"
-                        type="submit"
-                        className="flex bg-black text-white justify-center items-center rounded-md text-sm/6 font-semibold
-                        text-white shadow-sm "
-                    >
-                        {t('footer.subscribe')}
-                    </Button>
-
-                  </div>
+          {/* Logo et Newsletter */}
+          <div className="flex w-full items-center justify-center flex-col mb-12">
+            <h2 className="text-lg font-bold"><Logo /></h2>
+            <div className="mt-4">
+              <h3 className="text-sm w-full text-center font-semibold">{t('footer.subscribenow')}</h3>
+              <div className="flex mt-2 items-center justify-center gap-1">
+                <div className="">
+                  <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      placeholder={t('footer.placeholder')}
+                      className="rounded border-0 py-1.5 bg-white shadow-sm text-black sm:text-sm/6 items w-42.5"
+                  />
                 </div>
-              </div>
+                <Button
+                    variant="ghost"
+                    type="submit"
+                    className="flex bg-black justify-center items-center rounded-md text-sm/6 font-semibold
+                        text-white shadow-sm "
+                >
+                  {t('footer.subscribe')}
+                </Button>
 
+              </div>
+            </div>
+          </div>
+            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
               {/* Information */}
               <div>
                 <h3 className="text-sm font-semibold">{t('footer.Information.information')}</h3>
@@ -86,25 +88,25 @@ export default function Footer() {
               <div>
                 <h3 className="text-sm font-semibold">{t('navigation.nav4')}</h3>
                 <ul className="mt-4 space-y-2 text-sm">
-                  <li>
-                    <span className="font-bold">📞</span> +91 9999 999 999
+                  <li className={"flex items-center gap-0.5"}>
+                    <Phone size={24} /> +2126-1234-5678
                   </li>
-                  <li className="display flex items-center">
-                    <span className="font-bold"><img className="pr-2" src="/assets/images/mail.svg" alt="mail" /></span> youremailid.com
+                  <li className={"flex items-center gap-0.5"}>
+                    <Mail size={24}/> serv@brikool.com
                   </li>
                 </ul>
-                <div className="mt-4 flex space-x-4">
+                <div className="mt-4 w-full justify-start flex items-center gap-1.5">
                   <Link href="#" className="text-gray-600">
-                    <span className="text-2xl"><img src="/assets/images/linkedin.svg" alt="linkedin" /></span>
+                    <span className="text-2xl"><Image width={20} height={20} src="/assets/images/linkedin.svg" alt="linkedin" /></span>
                   </Link>
                   <Link href="#" className="text-gray-600">
-                    <span className="text-2xl"><img src="/assets/images/twitter.svg" alt="twitter" /></span>
+                    <span className="text-2xl"><Image width={20} height={20} src="/assets/images/twitter.svg" alt="twitter" /></span>
                   </Link>
                   <Link href="#" className="text-gray-600">
-                    <span className="text-2xl"><img src="/assets/images/facebook.svg" alt="facebook" /></span>
+                    <span className="text-2xl"><Image width={20} height={20} src="/assets/images/facebook.svg" alt="facebook" /></span>
                   </Link>
                   <Link href="#" className="text-gray-600">
-                  <span className="text-2xl"><img src="/assets/images/instagram.svg" alt="instagram" /></span>
+                  <span className="text-2xl"><Image width={24} height={24} src="/assets/images/instagram.svg" alt="instagram" /></span>
                   </Link>
                 </div>
               </div>
