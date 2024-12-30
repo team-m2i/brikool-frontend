@@ -11,12 +11,6 @@ export const withAuth = async (url: string, init?:  RequestInit, isJson = true) 
         const res : TSignInResponseModel = session.user as TSignInResponseModel
         accessToken = res.jwt.access_token
     }
-    console.log({
-        ...init,
-        headers: {
-            Authorization: 'Bearer ' + accessToken,
-        }
-    })
     if(isJson){
         return await fetch(url, {
             ...init,

@@ -9,10 +9,11 @@ import AboutUs from '../AboutUs/AboutUs'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import {Link} from "@/i18n/routing";
+import {cn} from "@/lib/utils";
 
 
 
-export default function Navbar() {
+export default function Navbar({className}: {className: string}) {
 const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 const [showModal, setShowModal] = useState(false)
 const t = useTranslations('HomePage');
@@ -22,8 +23,7 @@ const t = useTranslations('HomePage');
     <>
           <nav 
             aria-label="Global" 
-            className="fixed inset-x-0 top-0 flex items-center justify-between p-3 lg:px-8 
-            bg-myColor4 bg-opacity-25 backdrop-blur-sm z-50 shadow-lg rounded-b-lg ">
+            className={cn("fixed inset-x-0 top-0 flex items-center justify-between p-3 lg:px-8 bg-myColor4 bg-opacity-25 backdrop-blur-sm z-50 shadow-lg rounded-b-lg ", className)}>
               <div className="flex lg:flex-1">
                 <Link href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>

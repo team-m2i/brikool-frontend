@@ -46,8 +46,6 @@ export const checkUserExists = async (email: string) => {
 
 export const signUp = async (newUser: TSignUpSchema) => {
     const data: TSignUpModel | null = convertLocalToExternalSignUpModel(newUser);
-    console.log("------------- log register data -----------------")
-    console.log(data)
     if (data) {
         try {
             const res = await fetch(authFlowEndpoints.authFlow.signUp(), {
@@ -170,9 +168,6 @@ export const confirmEmail = async(postData: TConfirmEmailSchema) => {
         })
         if (!res.ok)
             console.error("Error during confirm email")
-        console.log("___________ ENDPOINT: ", endpoint)
-        console.log(data)
-        console.log(res)
         return new NextResponse(null, {
             status: res.status,
             statusText: res.statusText
