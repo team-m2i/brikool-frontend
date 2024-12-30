@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button"
 import React from 'react'
 import HomeHeader from "@/components/HomeHeader/header"
@@ -51,54 +50,59 @@ export default function HomePage({params: {locale}}: {params: { locale: string }
     return (
         <>
             <HomeHeader/>
-            <section id="services" className="py-12 px-8 lg:px-16 h-screen flex justify-center items-center">
-                <LanguageSwitcher classname='z-100 fixed top-[550px] end-[20px]' locale={locale}/>
-                <ThemeSwitcher className='z-100 fixed top-[600px] end-[20px]'/>
+            <LanguageSwitcher classname='bg-myColor6 z-100 fixed top-[550px] end-[20px]' locale={locale}/>
+            <ThemeSwitcher className='z-100 fixed top-[600px] end-[20px]'/>
+            <section id="services" className="py-12 px-8 lg:px-16 h-auto flex flex-col justify-center items-center space-y-10 lg:space-y-0">
+                
                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10">
-                    <div className="lg:w-1/3 text-left">
-                        <h1 className="text-5xl font-bold mb-4">{t('services.title')}</h1>
-                        <p className='text-lg'>
-                            {t('services.subtitle')}
-                        </p>
-                        <div className="pt-2">
-                            <Button variant="default" className="border-none">
-                                <Link href={`/${authFlowNavLinks.signUp.href}`} className="text-sm/6 text-white">{t('buttons.getstarted')}</Link>
-                            </Button>
-                        </div>
-                    </div>
-                    {/* Right Section: Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-10/12">
-                        {services.map((service, index) => (
-                            <div
-                                key={index}
-                                className={`p-10 rounded-lg shadow-md
-                      transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200
-                      ${service.bgColor} ${service.textColor} ${service.rotate}`}
-                            >
-                                <h2 className="font-bold text-lg">{service.title}</h2>
-                                <p className="mt-2 text-sm">{service.description}</p>
-                            </div>
-                        ))}
+                <div className="lg:w-1/3 text-left">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">{t('services.title')}</h1>
+                    <p className="text-sm sm:text-lg">
+                    {t('services.subtitle')}
+                    </p>
+                    <div className="pt-2" 
+                    // style={{ direction: locale === "ar" ? "rtl" : "ltr" }}
+                    >
+                    <Button variant="default" className="border-none">
+                        <Link href={`/${authFlowNavLinks.signUp.href}`} className="text-sm text-white">
+                        {t('buttons.getstarted')}
+                        </Link>
+                    </Button>
                     </div>
                 </div>
-            </section>
-            <section id="pricing" className='lg:px-8 flex z-50 justify-evenly items-center h-full'>
-                <div className=''>
-                    <img src="/assets/images/pricingImage.svg" alt="pricingImage"/>
-                </div>
-                <div className=''>
-                    <div className='p-6'>
-                        <h1 className="text-4xl font-bold text-900 mb-4">{t('pricing.title1')}</h1>
-                        <p>{t('pricing.subtitle1')}</p>
-                        <p>{t('pricing.subtitle2')}</p>
+                {/* Right Section: Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-10/12">
+                    {services.map((service, index) => (
+                    <div
+                        key={index}
+                        className={`p-6 sm:p-10 rounded-lg shadow-md
+                        transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200
+                        ${service.bgColor} ${service.textColor} ${service.rotate}`}
+                    >
+                        <h2 className="font-bold text-base sm:text-lg">{service.title}</h2>
+                        <p className="mt-2 text-xs sm:text-sm">{service.description}</p>
                     </div>
-                    <div className='p-6'>
-                        <h1 className="text-4xl font-bold text-900 mb-4">{t('pricing.title2')}</h1>
-                        <p>{t('pricing.subtitle3')}</p>
-                        <p>{t('pricing.subtitle4')}</p>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
+      </section>
+      <section id="pricing" className="px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row z-50 justify-evenly items-center h-auto lg:h-full">
+        <div className="hidden lg:block">
+          <img src="/assets/images/pricingImage.svg" alt="pricingImage" className="w-full max-w-lg" />
+        </div>
+        <div className="space-y-6">
+          <div className="p-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-900 mb-4">{t('pricing.title1')}</h1>
+            <p className="text-sm sm:text-base">{t('pricing.subtitle1')}</p>
+            <p className="text-sm sm:text-base">{t('pricing.subtitle2')}</p>
+          </div>
+          <div className="p-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-900 mb-4">{t('pricing.title2')}</h1>
+            <p className="text-sm sm:text-base">{t('pricing.subtitle3')}</p>
+            <p className="text-sm sm:text-base">{t('pricing.subtitle4')}</p>
+          </div>
+        </div>
+      </section>
             <Footer/>
 
         </>

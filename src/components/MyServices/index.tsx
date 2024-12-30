@@ -15,6 +15,15 @@ const MyServices: React.FC<MyServicesProps> = ({ services: initialServices }) =>
 
     // Define an array of image paths
     const imageOptions = [
+        "/images/carousel/carousel-01.jpg",
+        "/images/carousel/carousel-02.jpg",
+        "/images/carousel/carousel-03.jpg",
+        "/images/cards/cards-01.png",
+        "/images/cards/cards-02.png",
+        "/images/cards/cards-03.png",
+        "/images/cards/cards-04.png",
+        "/images/cards/cards-05.png",
+        "/images/cards/cards-06.png",
         "/images/cards/1.jpg",
         "/images/cards/2.jpg",
         "/images/cards/3.jpg",

@@ -13,7 +13,11 @@ const Dashboard = async () => {
 
     return (
         <div className="mx-auto w-full max-w-[970px]">
+<<<<<<< HEAD
+            <Breadcrumb pageName="Dashboard" />
+=======
             <Breadcrumb pageName="Mes Services " />
+>>>>>>> b985b85e3af25b1cbba2cd6ca06003361d1877d5
             <MyServices services={services} />
         </div>
     );

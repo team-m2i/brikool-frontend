@@ -29,7 +29,7 @@ function ThemeSwitcher({ className, size = "md" }: ThemeSwitcherProps) {
     const CLASS_NAME = setIconSize(size);
     return (
         <div className={className}>
-            <Button className={"rounded-full"} variant={"ghost"} size={"icon"} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            <Button className={"rounded-full bg-myColor6"} variant={"ghost"} size={"icon"} onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
                 { theme === "dark" && <Moon className={CLASS_NAME} />}
                 { theme === "light" && <Sun className={CLASS_NAME} />}
             </Button>

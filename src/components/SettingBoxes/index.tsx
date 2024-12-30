@@ -181,7 +181,6 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     )}
                   </div>
                 </div>
-
                 {/* Region and City */}
                 <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                   <div className="w-full sm:w-1/2">
@@ -247,7 +246,6 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     )}
                   </div>
                 </div>
-
                 {/* Address and ZIP */}
                 <div className="mb-5.5 flex flex-col gap-5.5 sm:flex-row">
                   <div className="w-full sm:w-1/2">
@@ -295,7 +293,6 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                     )}
                   </div>
                 </div>
-
                 {/* Email */}
                 <div className="mb-5.5">
                   <label
@@ -321,7 +318,6 @@ const SettingBoxes: React.FC<SettingBoxesProps> = ({ freelancer }) => {
                       </p>
                   )}
                 </div>
-
                 {/* Description */}
                 <div className="mb-5.5">
                   <label

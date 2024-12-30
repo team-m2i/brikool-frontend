@@ -14,11 +14,15 @@
           "nav1" :"About us",
           "nav2" :"Services",
           "nav3" :"Pricing",
-          "nav4" :"Contact us"
+          "nav4" :"Contact us",
+          "nav5" : "Announces",
+          "myaccount":"My Account",
+          "profile":"Profile"
       },
       "buttons": {
           "login" : "Log In",
           "signup": "Sign Up",
+          "signout":"Sign Out",
           "getstarted": "Get Started"
       },
       "aboutus": {
