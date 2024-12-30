@@ -15,15 +15,15 @@ const MyServices: React.FC<MyServicesProps> = ({ services: initialServices }) =>
 
     // Define an array of image paths
     const imageOptions = [
-        "/images/carousel/carousel-01.jpg",
-        "/images/carousel/carousel-02.jpg",
-        "/images/carousel/carousel-03.jpg",
-        "/images/cards/cards-01.png",
-        "/images/cards/cards-02.png",
-        "/images/cards/cards-03.png",
-        "/images/cards/cards-04.png",
-        "/images/cards/cards-05.png",
-        "/images/cards/cards-06.png",
+        "/images/cards/1.jpg",
+        "/images/cards/2.jpg",
+        "/images/cards/3.jpg",
+        "/images/cards/4.jpg",
+        "/images/cards/5.jpg",
+        "/images/cards/6.jpg",
+        "/images/cards/7.jpg",
+        "/images/cards/8.jpg",
+        "/images/cards/9.jpg",
 
 
     ];
@@ -66,7 +66,7 @@ const MyServices: React.FC<MyServicesProps> = ({ services: initialServices }) =>
 
     return (
         <div className="p-6">
-            <h1 className="text-2xl font-bold mb-6">My Services</h1>
+            <h1 className="text-2xl font-bold mb-6">Mes Services</h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service) => (
                     <div
