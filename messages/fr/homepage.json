@@ -14,11 +14,15 @@
           "nav1" :"À propos",
           "nav2" :"Services",
           "nav3" :"Tarifs",
-          "nav4" :"Contactez-nous"
+          "nav4" :"Contactez-nous",
+          "nav5" : "Annonces",
+          "myaccount":"Mon Compte",
+          "profile":"Profil"
       },
       "buttons": {
           "login" : "Se Connecter",
           "signup": "S'inscrire",
+          "signout":"Se Déconnecter",
           "getstarted": "Commencer"
       },
       "aboutus": {

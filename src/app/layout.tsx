@@ -38,14 +38,15 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             <title>Brikool</title>
         </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`} >
+        <div suppressHydrationWarning>
         <SessionProvider>
             <ThemeProvider attribute={"class"}>
-                <NextIntlClientProvider messages={messages}>
+                {/* <NextIntlClientProvider messages={messages}> */}
                     {children}
-                </NextIntlClientProvider>
+                {/* </NextIntlClientProvider> */}
             </ThemeProvider>
             <Toaster />
-        </SessionProvider>
+        </SessionProvider></div>
         </body>
         </html>
     );

@@ -10,7 +10,7 @@ const Profile = async () => {
     return (
             <div className="mx-auto w-full max-w-[970px]">
                 <Breadcrumb pageName="Profile" />
-                <ProfileBox freelancer={freelancer} />
+                <ProfileBox freelancer={freelancer} canEditCover={true}/>
             </div>
     );
 };
